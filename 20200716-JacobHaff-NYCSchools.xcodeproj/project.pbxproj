@@ -10,11 +10,13 @@
 		35CDCAF424C0FCD8003B6355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCAF324C0FCD8003B6355 /* AppDelegate.swift */; };
 		35CDCAF624C0FCD8003B6355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCAF524C0FCD8003B6355 /* SceneDelegate.swift */; };
 		35CDCAF824C0FCD8003B6355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCAF724C0FCD8003B6355 /* ViewController.swift */; };
-		35CDCAFD24C0FCDA003B6355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCAFC24C0FCDA003B6355 /* Assets.xcassets */; };
 		35CDCB0024C0FCDA003B6355 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCAFE24C0FCDA003B6355 /* LaunchScreen.storyboard */; };
 		35CDCB0B24C0FCDB003B6355 /* _0200716_JacobHaff_NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB0A24C0FCDB003B6355 /* _0200716_JacobHaff_NYCSchoolsTests.swift */; };
 		35CDCB1624C0FCDB003B6355 /* _0200716_JacobHaff_NYCSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB1524C0FCDB003B6355 /* _0200716_JacobHaff_NYCSchoolsUITests.swift */; };
 		35CDCB2724C10308003B6355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCB2524C10308003B6355 /* Main.storyboard */; };
+		35CDCB2A24C10803003B6355 /* NYCHSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB2824C10803003B6355 /* NYCHSCell.swift */; };
+		35CDCB2B24C10803003B6355 /* NYCHSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCB2924C10803003B6355 /* NYCHSCell.xib */; };
+		35CDCB2D24C1081E003B6355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCB2C24C1081E003B6355 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,6 @@
 		35CDCAF324C0FCD8003B6355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35CDCAF524C0FCD8003B6355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		35CDCAF724C0FCD8003B6355 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		35CDCAFC24C0FCDA003B6355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35CDCAFF24C0FCDA003B6355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35CDCB0124C0FCDA003B6355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35CDCB0624C0FCDB003B6355 /* 20200716-JacobHaff-NYCSchoolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20200716-JacobHaff-NYCSchoolsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +50,9 @@
 		35CDCB1524C0FCDB003B6355 /* _0200716_JacobHaff_NYCSchoolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0200716_JacobHaff_NYCSchoolsUITests.swift; sourceTree = "<group>"; };
 		35CDCB1724C0FCDB003B6355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35CDCB2624C10308003B6355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		35CDCB2824C10803003B6355 /* NYCHSCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYCHSCell.swift; sourceTree = "<group>"; };
+		35CDCB2924C10803003B6355 /* NYCHSCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYCHSCell.xib; sourceTree = "<group>"; };
+		35CDCB2C24C1081E003B6355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../20200715-JacobHaff-NYCSchools/20200715-JacobHaff-NYCSchools/Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +105,10 @@
 			children = (
 				35CDCAF324C0FCD8003B6355 /* AppDelegate.swift */,
 				35CDCAF524C0FCD8003B6355 /* SceneDelegate.swift */,
+				35CDCB2824C10803003B6355 /* NYCHSCell.swift */,
+				35CDCB2924C10803003B6355 /* NYCHSCell.xib */,
 				35CDCAF724C0FCD8003B6355 /* ViewController.swift */,
-				35CDCAFC24C0FCDA003B6355 /* Assets.xcassets */,
+				35CDCB2C24C1081E003B6355 /* Assets.xcassets */,
 				35CDCAFE24C0FCDA003B6355 /* LaunchScreen.storyboard */,
 				35CDCB2524C10308003B6355 /* Main.storyboard */,
 				35CDCB0124C0FCDA003B6355 /* Info.plist */,
@@ -234,7 +240,8 @@
 			files = (
 				35CDCB2724C10308003B6355 /* Main.storyboard in Resources */,
 				35CDCB0024C0FCDA003B6355 /* LaunchScreen.storyboard in Resources */,
-				35CDCAFD24C0FCDA003B6355 /* Assets.xcassets in Resources */,
+				35CDCB2B24C10803003B6355 /* NYCHSCell.xib in Resources */,
+				35CDCB2D24C1081E003B6355 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +269,7 @@
 				35CDCAF824C0FCD8003B6355 /* ViewController.swift in Sources */,
 				35CDCAF424C0FCD8003B6355 /* AppDelegate.swift in Sources */,
 				35CDCAF624C0FCD8003B6355 /* SceneDelegate.swift in Sources */,
+				35CDCB2A24C10803003B6355 /* NYCHSCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
