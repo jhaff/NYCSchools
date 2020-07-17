@@ -9,14 +9,17 @@
 /* Begin PBXBuildFile section */
 		35CDCAF424C0FCD8003B6355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCAF324C0FCD8003B6355 /* AppDelegate.swift */; };
 		35CDCAF624C0FCD8003B6355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCAF524C0FCD8003B6355 /* SceneDelegate.swift */; };
-		35CDCAF824C0FCD8003B6355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCAF724C0FCD8003B6355 /* ViewController.swift */; };
 		35CDCB0024C0FCDA003B6355 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCAFE24C0FCDA003B6355 /* LaunchScreen.storyboard */; };
 		35CDCB0B24C0FCDB003B6355 /* _0200716_JacobHaff_NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB0A24C0FCDB003B6355 /* _0200716_JacobHaff_NYCSchoolsTests.swift */; };
 		35CDCB1624C0FCDB003B6355 /* _0200716_JacobHaff_NYCSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB1524C0FCDB003B6355 /* _0200716_JacobHaff_NYCSchoolsUITests.swift */; };
 		35CDCB2724C10308003B6355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCB2524C10308003B6355 /* Main.storyboard */; };
-		35CDCB2A24C10803003B6355 /* NYCHSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB2824C10803003B6355 /* NYCHSCell.swift */; };
+		35CDCB2A24C10803003B6355 /* NYCHSSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB2824C10803003B6355 /* NYCHSSchoolCell.swift */; };
 		35CDCB2B24C10803003B6355 /* NYCHSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCB2924C10803003B6355 /* NYCHSCell.xib */; };
 		35CDCB2D24C1081E003B6355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCB2C24C1081E003B6355 /* Assets.xcassets */; };
+		35CDCB3124C12D49003B6355 /* NYCHSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3024C12D49003B6355 /* NYCHSViewController.swift */; };
+		35CDCB3324C12E1A003B6355 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3224C12E1A003B6355 /* K.swift */; };
+		35CDCB3524C12E3F003B6355 /* NYCHighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3424C12E3F003B6355 /* NYCHighSchool.swift */; };
+		35CDCB3724C12E62003B6355 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3624C12E62003B6355 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,6 @@
 		35CDCAF024C0FCD8003B6355 /* 20200716-JacobHaff-NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20200716-JacobHaff-NYCSchools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35CDCAF324C0FCD8003B6355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35CDCAF524C0FCD8003B6355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		35CDCAF724C0FCD8003B6355 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35CDCAFF24C0FCDA003B6355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35CDCB0124C0FCDA003B6355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35CDCB0624C0FCDB003B6355 /* 20200716-JacobHaff-NYCSchoolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20200716-JacobHaff-NYCSchoolsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,9 +52,14 @@
 		35CDCB1524C0FCDB003B6355 /* _0200716_JacobHaff_NYCSchoolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0200716_JacobHaff_NYCSchoolsUITests.swift; sourceTree = "<group>"; };
 		35CDCB1724C0FCDB003B6355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35CDCB2624C10308003B6355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		35CDCB2824C10803003B6355 /* NYCHSCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYCHSCell.swift; sourceTree = "<group>"; };
+		35CDCB2824C10803003B6355 /* NYCHSSchoolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYCHSSchoolCell.swift; sourceTree = "<group>"; };
 		35CDCB2924C10803003B6355 /* NYCHSCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYCHSCell.xib; sourceTree = "<group>"; };
 		35CDCB2C24C1081E003B6355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../20200715-JacobHaff-NYCSchools/20200715-JacobHaff-NYCSchools/Assets.xcassets"; sourceTree = "<group>"; };
+		35CDCB3024C12D49003B6355 /* NYCHSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYCHSViewController.swift; sourceTree = "<group>"; };
+		35CDCB3224C12E1A003B6355 /* K.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		35CDCB3424C12E3F003B6355 /* NYCHighSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYCHighSchool.swift; sourceTree = "<group>"; };
+		35CDCB3624C12E62003B6355 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		35CDCB3B24C14347003B6355 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +90,7 @@
 		35CDCAE724C0FCD8003B6355 = {
 			isa = PBXGroup;
 			children = (
+				35CDCB3B24C14347003B6355 /* README.md */,
 				35CDCAF224C0FCD8003B6355 /* 20200716-JacobHaff-NYCSchools */,
 				35CDCB0924C0FCDB003B6355 /* 20200716-JacobHaff-NYCSchoolsTests */,
 				35CDCB1424C0FCDB003B6355 /* 20200716-JacobHaff-NYCSchoolsUITests */,
@@ -103,14 +111,15 @@
 		35CDCAF224C0FCD8003B6355 /* 20200716-JacobHaff-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				35CDCB3A24C140D0003B6355 /* Controller */,
+				35CDCB3924C140C9003B6355 /* View */,
+				35CDCB3824C140C3003B6355 /* Model */,
 				35CDCAF324C0FCD8003B6355 /* AppDelegate.swift */,
 				35CDCAF524C0FCD8003B6355 /* SceneDelegate.swift */,
-				35CDCB2824C10803003B6355 /* NYCHSCell.swift */,
-				35CDCB2924C10803003B6355 /* NYCHSCell.xib */,
-				35CDCAF724C0FCD8003B6355 /* ViewController.swift */,
+				35CDCB3224C12E1A003B6355 /* K.swift */,
 				35CDCB2C24C1081E003B6355 /* Assets.xcassets */,
 				35CDCAFE24C0FCDA003B6355 /* LaunchScreen.storyboard */,
-				35CDCB2524C10308003B6355 /* Main.storyboard */,
+				35CDCB3624C12E62003B6355 /* Utils.swift */,
 				35CDCB0124C0FCDA003B6355 /* Info.plist */,
 			);
 			path = "20200716-JacobHaff-NYCSchools";
@@ -132,6 +141,32 @@
 				35CDCB1724C0FCDB003B6355 /* Info.plist */,
 			);
 			path = "20200716-JacobHaff-NYCSchoolsUITests";
+			sourceTree = "<group>";
+		};
+		35CDCB3824C140C3003B6355 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35CDCB3424C12E3F003B6355 /* NYCHighSchool.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35CDCB3924C140C9003B6355 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				35CDCB2924C10803003B6355 /* NYCHSCell.xib */,
+				35CDCB2524C10308003B6355 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35CDCB3A24C140D0003B6355 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				35CDCB2824C10803003B6355 /* NYCHSSchoolCell.swift */,
+				35CDCB3024C12D49003B6355 /* NYCHSViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35CDCAF824C0FCD8003B6355 /* ViewController.swift in Sources */,
+				35CDCB3124C12D49003B6355 /* NYCHSViewController.swift in Sources */,
+				35CDCB3324C12E1A003B6355 /* K.swift in Sources */,
 				35CDCAF424C0FCD8003B6355 /* AppDelegate.swift in Sources */,
+				35CDCB3724C12E62003B6355 /* Utils.swift in Sources */,
 				35CDCAF624C0FCD8003B6355 /* SceneDelegate.swift in Sources */,
-				35CDCB2A24C10803003B6355 /* NYCHSCell.swift in Sources */,
+				35CDCB3524C12E3F003B6355 /* NYCHighSchool.swift in Sources */,
+				35CDCB2A24C10803003B6355 /* NYCHSSchoolCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
