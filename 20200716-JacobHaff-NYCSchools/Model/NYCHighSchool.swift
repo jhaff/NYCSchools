@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NYCHighSchool: NSObject {
+class NYCHighSchool: Codable {
 
     var id: String?
     var name: String?

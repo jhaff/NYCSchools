@@ -124,10 +124,23 @@ class NYCHSViewController: UIViewController {
     
     @IBAction func sortButtonPressed(_ sender: UIBarButtonItem) {
         //TESTING
-        print(nycHSList)
+        doDopeThings()
         
     }
     
+    
+    //MARK: Testing API shit
+    
+    private func doDopeThings() {
+        ServiceLayer.request(router: Router.getSchools) { (result: Result<[String : [NYCHighSchool]], Error>) in
+            switch result {
+            case .success:
+                print(result)
+            case .failure:
+                print(result)
+            }
+        }
+    }
     
 }
 
@@ -145,5 +158,25 @@ extension NYCHSViewController: UITableViewDataSource {
         cell.schoolNameLabel.text = nycHSList?[indexPath.row].name
         
         return cell
+    }
+    
+}
+
+// MARK: UITableViewDelegate Extension
+
+extension NYCHSViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        var nycHighSchoolList: NYCHighSchool
+//
+//        if isFiltering() {
+//            nycHighSchoolList = filteredNycHSList[indexPath.row]
+//        } else {
+//            nycHighSchoolList = self.nycHSList![indexPath.row]
+//        }
+        
+        let selectedHighSchool = nycHSList?[indexPath.row]
+        self.performSegue(withIdentifier: K.HSDetailsSegue, sender: selectedHighSchool)
+        
     }
 }

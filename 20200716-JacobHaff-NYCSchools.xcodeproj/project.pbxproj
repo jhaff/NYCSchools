@@ -20,6 +20,8 @@
 		35CDCB3324C12E1A003B6355 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3224C12E1A003B6355 /* K.swift */; };
 		35CDCB3524C12E3F003B6355 /* NYCHighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3424C12E3F003B6355 /* NYCHighSchool.swift */; };
 		35CDCB3724C12E62003B6355 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3624C12E62003B6355 /* Utils.swift */; };
+		35CDCB3E24C4D402003B6355 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3D24C4D402003B6355 /* Router.swift */; };
+		35CDCB4024C4DC8C003B6355 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3F24C4DC8C003B6355 /* ServiceLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		35CDCB3424C12E3F003B6355 /* NYCHighSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYCHighSchool.swift; sourceTree = "<group>"; };
 		35CDCB3624C12E62003B6355 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		35CDCB3B24C14347003B6355 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		35CDCB3D24C4D402003B6355 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		35CDCB3F24C4DC8C003B6355 /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		35CDCAF224C0FCD8003B6355 /* 20200716-JacobHaff-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				35CDCB3C24C4D3E3003B6355 /* API */,
 				35CDCB3A24C140D0003B6355 /* Controller */,
 				35CDCB3924C140C9003B6355 /* View */,
 				35CDCB3824C140C3003B6355 /* Model */,
@@ -167,6 +172,15 @@
 				35CDCB3024C12D49003B6355 /* NYCHSViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		35CDCB3C24C4D3E3003B6355 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				35CDCB3D24C4D402003B6355 /* Router.swift */,
+				35CDCB3F24C4DC8C003B6355 /* ServiceLayer.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,12 +315,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CDCB3E24C4D402003B6355 /* Router.swift in Sources */,
 				35CDCB3124C12D49003B6355 /* NYCHSViewController.swift in Sources */,
 				35CDCB3324C12E1A003B6355 /* K.swift in Sources */,
 				35CDCAF424C0FCD8003B6355 /* AppDelegate.swift in Sources */,
 				35CDCB3724C12E62003B6355 /* Utils.swift in Sources */,
 				35CDCAF624C0FCD8003B6355 /* SceneDelegate.swift in Sources */,
 				35CDCB3524C12E3F003B6355 /* NYCHighSchool.swift in Sources */,
+				35CDCB4024C4DC8C003B6355 /* ServiceLayer.swift in Sources */,
 				35CDCB2A24C10803003B6355 /* NYCHSSchoolCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

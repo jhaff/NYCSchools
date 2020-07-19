@@ -13,4 +13,6 @@ struct K {
     static let schoolDetailsUrl = "https://data.cityofnewyork.us/resource/734v-jeq5.json"
     
     static let hsCellIdentifier = "NYCHSCell"
+    static let HSDetailsSegue = "HSDetailsSegue"
+
 }

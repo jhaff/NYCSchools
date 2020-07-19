@@ -52,5 +52,6 @@ class NYCHSSchoolCell: UITableViewCell {
     }
     
     @IBAction func detailsButtonPressed(_ sender: UIButton) {
+      
     }
 }
