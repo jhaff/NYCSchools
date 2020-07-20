@@ -17,11 +17,14 @@
 		35CDCB2B24C10803003B6355 /* NYCHSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCB2924C10803003B6355 /* NYCHSCell.xib */; };
 		35CDCB2D24C1081E003B6355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCB2C24C1081E003B6355 /* Assets.xcassets */; };
 		35CDCB3124C12D49003B6355 /* NYCHSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3024C12D49003B6355 /* NYCHSViewController.swift */; };
-		35CDCB3324C12E1A003B6355 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3224C12E1A003B6355 /* K.swift */; };
+		35CDCB3324C12E1A003B6355 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3224C12E1A003B6355 /* Constants.swift */; };
 		35CDCB3524C12E3F003B6355 /* NYCHighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3424C12E3F003B6355 /* NYCHighSchool.swift */; };
 		35CDCB3724C12E62003B6355 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3624C12E62003B6355 /* Utils.swift */; };
 		35CDCB3E24C4D402003B6355 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3D24C4D402003B6355 /* Router.swift */; };
 		35CDCB4024C4DC8C003B6355 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB3F24C4DC8C003B6355 /* ServiceLayer.swift */; };
+		35CDCB4324C514BD003B6355 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB4224C514BD003B6355 /* Extensions.swift */; };
+		35CDCB4624C5301D003B6355 /* SchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB4424C5301D003B6355 /* SchoolCell.swift */; };
+		35CDCB4724C5301D003B6355 /* SchoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCB4524C5301D003B6355 /* SchoolCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +61,15 @@
 		35CDCB2924C10803003B6355 /* NYCHSCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYCHSCell.xib; sourceTree = "<group>"; };
 		35CDCB2C24C1081E003B6355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../20200715-JacobHaff-NYCSchools/20200715-JacobHaff-NYCSchools/Assets.xcassets"; sourceTree = "<group>"; };
 		35CDCB3024C12D49003B6355 /* NYCHSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYCHSViewController.swift; sourceTree = "<group>"; };
-		35CDCB3224C12E1A003B6355 /* K.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		35CDCB3224C12E1A003B6355 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35CDCB3424C12E3F003B6355 /* NYCHighSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYCHighSchool.swift; sourceTree = "<group>"; };
 		35CDCB3624C12E62003B6355 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		35CDCB3B24C14347003B6355 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		35CDCB3D24C4D402003B6355 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		35CDCB3F24C4DC8C003B6355 /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
+		35CDCB4224C514BD003B6355 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		35CDCB4424C5301D003B6355 /* SchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCell.swift; sourceTree = "<group>"; };
+		35CDCB4524C5301D003B6355 /* SchoolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,13 +121,14 @@
 		35CDCAF224C0FCD8003B6355 /* 20200716-JacobHaff-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				35CDCB4124C514A5003B6355 /* Extensions */,
 				35CDCB3C24C4D3E3003B6355 /* API */,
 				35CDCB3A24C140D0003B6355 /* Controller */,
 				35CDCB3924C140C9003B6355 /* View */,
 				35CDCB3824C140C3003B6355 /* Model */,
 				35CDCAF324C0FCD8003B6355 /* AppDelegate.swift */,
 				35CDCAF524C0FCD8003B6355 /* SceneDelegate.swift */,
-				35CDCB3224C12E1A003B6355 /* K.swift */,
+				35CDCB3224C12E1A003B6355 /* Constants.swift */,
 				35CDCB2C24C1081E003B6355 /* Assets.xcassets */,
 				35CDCAFE24C0FCDA003B6355 /* LaunchScreen.storyboard */,
 				35CDCB3624C12E62003B6355 /* Utils.swift */,
@@ -161,6 +168,8 @@
 			children = (
 				35CDCB2924C10803003B6355 /* NYCHSCell.xib */,
 				35CDCB2524C10308003B6355 /* Main.storyboard */,
+				35CDCB4424C5301D003B6355 /* SchoolCell.swift */,
+				35CDCB4524C5301D003B6355 /* SchoolCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +190,14 @@
 				35CDCB3F24C4DC8C003B6355 /* ServiceLayer.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		35CDCB4124C514A5003B6355 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				35CDCB4224C514BD003B6355 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +307,7 @@
 				35CDCB2724C10308003B6355 /* Main.storyboard in Resources */,
 				35CDCB0024C0FCDA003B6355 /* LaunchScreen.storyboard in Resources */,
 				35CDCB2B24C10803003B6355 /* NYCHSCell.xib in Resources */,
+				35CDCB4724C5301D003B6355 /* SchoolCell.xib in Resources */,
 				35CDCB2D24C1081E003B6355 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,9 +335,11 @@
 			files = (
 				35CDCB3E24C4D402003B6355 /* Router.swift in Sources */,
 				35CDCB3124C12D49003B6355 /* NYCHSViewController.swift in Sources */,
-				35CDCB3324C12E1A003B6355 /* K.swift in Sources */,
+				35CDCB3324C12E1A003B6355 /* Constants.swift in Sources */,
+				35CDCB4624C5301D003B6355 /* SchoolCell.swift in Sources */,
 				35CDCAF424C0FCD8003B6355 /* AppDelegate.swift in Sources */,
 				35CDCB3724C12E62003B6355 /* Utils.swift in Sources */,
+				35CDCB4324C514BD003B6355 /* Extensions.swift in Sources */,
 				35CDCAF624C0FCD8003B6355 /* SceneDelegate.swift in Sources */,
 				35CDCB3524C12E3F003B6355 /* NYCHighSchool.swift in Sources */,
 				35CDCB4024C4DC8C003B6355 /* ServiceLayer.swift in Sources */,

@@ -14,17 +14,11 @@ enum Router {
     case getDetails
     
     var scheme: String {
-        switch self {
-        case .getSchools, .getDetails:
-            return "https"
-        }
+        return "https"
     }
     
     var host: String {
-        switch self {
-        case .getSchools, .getDetails:
-            return "data.cityofnewyork.us"
-        }
+        return "data.cityofnewyork.us"
     }
     
     var path: String {
@@ -37,10 +31,7 @@ enum Router {
     }
     
     var method: String {
-        switch self {
-        case .getSchools, .getDetails:
-            return "GET"
-        }
+        return "GET"
     }
     
     

@@ -18,7 +18,9 @@ class NYCHSViewController: UIViewController {
         
         tableView.dataSource = self
         
-        tableView.register(UINib(nibName: "NYCHSCell", bundle: nil), forCellReuseIdentifier: "NYCHSCell")
+        tableView.delegate = self
+        
+        tableView.register(UINib(nibName: "SchoolCell", bundle: nil), forCellReuseIdentifier: "SchoolCell")
         
         DispatchQueue.global(qos: .userInitiated).async {
             self.fetchNYCHighSchoolInformation()
@@ -40,7 +42,7 @@ class NYCHSViewController: UIViewController {
     //TODO: Extract these methods to an API class wirth static methods. Maybe another file for JSON parsing.
     
     func fetchNYCHighSchoolInformation() {
-        guard let highSchoolsURL = URL(string: K.highSchoolsURL) else {
+        guard let highSchoolsURL = URL(string: Constants.highSchoolsURL) else {
             return
         }
         
@@ -63,7 +65,7 @@ class NYCHSViewController: UIViewController {
     }
     
     private func fetchHighSchoolDetails() {
-        guard let highSchoolDetailsURL = URL(string: K.schoolDetailsUrl) else {
+        guard let highSchoolDetailsURL = URL(string: Constants.schoolDetailsUrl) else {
             return
         }
         let request = URLRequest(url:highSchoolDetailsURL)
@@ -152,12 +154,25 @@ extension NYCHSViewController: UITableViewDataSource {
         return self.nycHSList?.count ?? 0
     }
     
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: NYCHSSchoolCell = self.tableView.dequeueReusableCell(withIdentifier: K.hsCellIdentifier, for: indexPath) as! NYCHSSchoolCell
+        let cell: SchoolCell = self.tableView.dequeueReusableCell(withIdentifier: Constants.hsCellIdentifier, for: indexPath) as! SchoolCell
+                
+//        cell.school = nycHSList?[indexPath.row] as! NYCHighSchool
         
         cell.schoolNameLabel.text = nycHSList?[indexPath.row].name
-        
+                
         return cell
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
     
 }
@@ -167,16 +182,12 @@ extension NYCHSViewController: UITableViewDataSource {
 extension NYCHSViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        var nycHighSchoolList: NYCHighSchool
-//
-//        if isFiltering() {
-//            nycHighSchoolList = filteredNycHSList[indexPath.row]
-//        } else {
-//            nycHighSchoolList = self.nycHSList![indexPath.row]
-//        }
-        
         let selectedHighSchool = nycHSList?[indexPath.row]
-        self.performSegue(withIdentifier: K.HSDetailsSegue, sender: selectedHighSchool)
+        self.performSegue(withIdentifier: Constants.HSDetailsSegue, sender: self)
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150.00
     }
 }

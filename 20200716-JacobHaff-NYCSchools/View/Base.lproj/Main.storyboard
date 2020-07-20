@@ -50,7 +50,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="OWK-pi-u2M" id="faP-ot-X72"/>
-                        <segue destination="e3b-RT-iLb" kind="show" identifier="HSDetailsSegue" id="108-30-eJp"/>
+                        <segue destination="e3b-RT-iLb" kind="show" identifier="HSDetailsSegue" id="Sts-KO-4cn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6p-cT-i8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

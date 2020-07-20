@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct K {
+struct Constants {
     static let highSchoolsURL = "https://data.cityofnewyork.us/resource/97mf-9njv.json"
     static let schoolDetailsUrl = "https://data.cityofnewyork.us/resource/734v-jeq5.json"
-    
-    static let hsCellIdentifier = "NYCHSCell"
+
+    static let hsCellIdentifier = "SchoolCell"
     static let HSDetailsSegue = "HSDetailsSegue"
 
 }
