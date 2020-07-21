@@ -25,6 +25,13 @@
 		35CDCB4324C514BD003B6355 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB4224C514BD003B6355 /* Extensions.swift */; };
 		35CDCB4624C5301D003B6355 /* SchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB4424C5301D003B6355 /* SchoolCell.swift */; };
 		35CDCB4724C5301D003B6355 /* SchoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CDCB4524C5301D003B6355 /* SchoolCell.xib */; };
+		35CDCB4924C542F0003B6355 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB4824C542F0003B6355 /* DetailsViewController.swift */; };
+		35CDCB4B24C544A3003B6355 /* HSOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB4A24C544A3003B6355 /* HSOverviewTableViewCell.swift */; };
+		35CDCB4D24C544FC003B6355 /* HSContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB4C24C544FC003B6355 /* HSContactTableViewCell.swift */; };
+		35CDCB4F24C545F7003B6355 /* HSNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB4E24C545F7003B6355 /* HSNameTableViewCell.swift */; };
+		35CDCB5124C546BF003B6355 /* HSMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB5024C546BF003B6355 /* HSMapTableViewCell.swift */; };
+		35CDCB5324C55AB5003B6355 /* DetailCellsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB5224C55AB5003B6355 /* DetailCellsHelper.swift */; };
+		35CDCB5524C5D7C6003B6355 /* HSSATScoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB5424C5D7C6003B6355 /* HSSATScoresTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +77,13 @@
 		35CDCB4224C514BD003B6355 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		35CDCB4424C5301D003B6355 /* SchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCell.swift; sourceTree = "<group>"; };
 		35CDCB4524C5301D003B6355 /* SchoolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolCell.xib; sourceTree = "<group>"; };
+		35CDCB4824C542F0003B6355 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		35CDCB4A24C544A3003B6355 /* HSOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		35CDCB4C24C544FC003B6355 /* HSContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSContactTableViewCell.swift; sourceTree = "<group>"; };
+		35CDCB4E24C545F7003B6355 /* HSNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSNameTableViewCell.swift; sourceTree = "<group>"; };
+		35CDCB5024C546BF003B6355 /* HSMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSMapTableViewCell.swift; sourceTree = "<group>"; };
+		35CDCB5224C55AB5003B6355 /* DetailCellsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellsHelper.swift; sourceTree = "<group>"; };
+		35CDCB5424C5D7C6003B6355 /* HSSATScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSSATScoresTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +146,7 @@
 				35CDCB2C24C1081E003B6355 /* Assets.xcassets */,
 				35CDCAFE24C0FCDA003B6355 /* LaunchScreen.storyboard */,
 				35CDCB3624C12E62003B6355 /* Utils.swift */,
+				35CDCB5224C55AB5003B6355 /* DetailCellsHelper.swift */,
 				35CDCB0124C0FCDA003B6355 /* Info.plist */,
 			);
 			path = "20200716-JacobHaff-NYCSchools";
@@ -168,6 +183,11 @@
 			children = (
 				35CDCB2924C10803003B6355 /* NYCHSCell.xib */,
 				35CDCB2524C10308003B6355 /* Main.storyboard */,
+				35CDCB5424C5D7C6003B6355 /* HSSATScoresTableViewCell.swift */,
+				35CDCB5024C546BF003B6355 /* HSMapTableViewCell.swift */,
+				35CDCB4E24C545F7003B6355 /* HSNameTableViewCell.swift */,
+				35CDCB4A24C544A3003B6355 /* HSOverviewTableViewCell.swift */,
+				35CDCB4C24C544FC003B6355 /* HSContactTableViewCell.swift */,
 				35CDCB4424C5301D003B6355 /* SchoolCell.swift */,
 				35CDCB4524C5301D003B6355 /* SchoolCell.xib */,
 			);
@@ -178,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				35CDCB2824C10803003B6355 /* NYCHSSchoolCell.swift */,
+				35CDCB4824C542F0003B6355 /* DetailsViewController.swift */,
 				35CDCB3024C12D49003B6355 /* NYCHSViewController.swift */,
 			);
 			path = Controller;
@@ -333,17 +354,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CDCB4F24C545F7003B6355 /* HSNameTableViewCell.swift in Sources */,
 				35CDCB3E24C4D402003B6355 /* Router.swift in Sources */,
 				35CDCB3124C12D49003B6355 /* NYCHSViewController.swift in Sources */,
+				35CDCB5324C55AB5003B6355 /* DetailCellsHelper.swift in Sources */,
+				35CDCB5524C5D7C6003B6355 /* HSSATScoresTableViewCell.swift in Sources */,
 				35CDCB3324C12E1A003B6355 /* Constants.swift in Sources */,
+				35CDCB4D24C544FC003B6355 /* HSContactTableViewCell.swift in Sources */,
 				35CDCB4624C5301D003B6355 /* SchoolCell.swift in Sources */,
 				35CDCAF424C0FCD8003B6355 /* AppDelegate.swift in Sources */,
 				35CDCB3724C12E62003B6355 /* Utils.swift in Sources */,
 				35CDCB4324C514BD003B6355 /* Extensions.swift in Sources */,
 				35CDCAF624C0FCD8003B6355 /* SceneDelegate.swift in Sources */,
 				35CDCB3524C12E3F003B6355 /* NYCHighSchool.swift in Sources */,
+				35CDCB4B24C544A3003B6355 /* HSOverviewTableViewCell.swift in Sources */,
 				35CDCB4024C4DC8C003B6355 /* ServiceLayer.swift in Sources */,
 				35CDCB2A24C10803003B6355 /* NYCHSSchoolCell.swift in Sources */,
+				35CDCB4924C542F0003B6355 /* DetailsViewController.swift in Sources */,
+				35CDCB5124C546BF003B6355 /* HSMapTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

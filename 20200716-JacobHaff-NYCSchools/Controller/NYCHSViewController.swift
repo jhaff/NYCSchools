@@ -23,9 +23,17 @@ class NYCHSViewController: UIViewController {
         tableView.register(UINib(nibName: "SchoolCell", bundle: nil), forCellReuseIdentifier: "SchoolCell")
         
         DispatchQueue.global(qos: .userInitiated).async {
-            self.fetchNYCHighSchoolInformation()
+//            self.fetchNYCHighSchoolInformation()
         }
         
+    }
+    
+    //MARK: - Variables
+    
+    var nycHSList: [NYCHighSchool]?
+    
+    func updateSchools(schools: [NYCHighSchool]) {
+        nycHSList = schools
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,36 +41,33 @@ class NYCHSViewController: UIViewController {
         
         
     }
-    //MARK: - Variables
-    
-    var nycHSList: [NYCHighSchool]?
     
     //MARK: - API Calls and JSON parsing
     
     //TODO: Extract these methods to an API class wirth static methods. Maybe another file for JSON parsing.
     
-    func fetchNYCHighSchoolInformation() {
-        guard let highSchoolsURL = URL(string: Constants.highSchoolsURL) else {
-            return
-        }
-        
-        let request = URLRequest(url:highSchoolsURL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { [weak self] (highSchoolsData, response, error)  in
-            if highSchoolsData != nil{
-                do{
-                    let highSchoolsObject = try JSONSerialization.jsonObject(with: highSchoolsData!, options: [])
-                    self?.nycHSList = Utils.highSchoolsJSONDataToModelArray(highSchoolsObject)
-                    self?.fetchHighSchoolDetails()
-                }catch{
-                    print("NYC HS JSON error: \(error.localizedDescription)")
-                }
-            }
-        }
-        task.resume()
-        
-        print(nycHSList)
-    }
+//    func fetchNYCHighSchoolInformation() {
+//        guard let highSchoolsURL = URL(string: Constants.highSchoolsURL) else {
+//            return
+//        }
+//        
+//        let request = URLRequest(url:highSchoolsURL)
+//        let session = URLSession.shared
+//        let task = session.dataTask(with: request) { [weak self] (highSchoolsData, response, error)  in
+//            if highSchoolsData != nil{
+//                do{
+//                    let highSchoolsObject = try JSONSerialization.jsonObject(with: highSchoolsData!, options: [])
+//                    self?.nycHSList = Utils.highSchoolsJSONDataToModelArray(highSchoolsObject)
+//                    self?.fetchHighSchoolDetails()
+//                }catch{
+//                    print("NYC HS JSON error: \(error.localizedDescription)")
+//                }
+//            }
+//        }
+//        task.resume()
+//        
+//        print(nycHSList)
+//    }
     
     private func fetchHighSchoolDetails() {
         guard let highSchoolDetailsURL = URL(string: Constants.schoolDetailsUrl) else {
@@ -134,13 +139,18 @@ class NYCHSViewController: UIViewController {
     //MARK: Testing API shit
     
     private func doDopeThings() {
-        ServiceLayer.request(router: Router.getSchools) { (result: Result<[String : [NYCHighSchool]], Error>) in
+        ServiceLayer.request(router: Router.getSchools) { (result: Result<[NYCHighSchool], Error>) in
             switch result {
-            case .success:
+            case .success(let scools):
                 print(result)
+                
+                self.nycHSList = scools
+                self.tableView.reloadData()
             case .failure:
                 print(result)
             }
+            
+    
         }
     }
     
