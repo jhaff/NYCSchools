@@ -33,7 +33,7 @@ class DetailCellsHelper {
     static func tableViewCellWithOverView(_ tableView: UITableView, hsWithSatScore: NYCHighSchool) -> UITableViewCell {
         let schoolWithOverviewCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolOverviewCellIdentifier) as! HSOverviewTableViewCell
         
-        schoolWithOverviewCell.overviewContentLabel.text = hsWithSatScore.overview
+        schoolWithOverviewCell.overviewContentLabel.text = hsWithSatScore.overviewParagraph
         
         return schoolWithOverviewCell
     }
@@ -44,9 +44,9 @@ class DetailCellsHelper {
     - Returns: UITableViewCell
      */
     static func tableViewCellWithContactInfo(_ tableView: UITableView, hsWithSatScore: NYCHighSchool) -> UITableViewCell {
-        let schoolWithContactCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithContactCellIdentifier) as! HSContactTableViewCell
+        let schoolWithContactCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolContactCellIdentifier) as! HSContactTableViewCell
         
-        schoolWithContactCell.schoolAddressLabel.text = "Address: " + Utils.getCompleteAddressWithoutCoordinate(hsWithSatScore.address)
+        schoolWithContactCell.schoolAddressLabel.text = "Address: " + Utils.getCompleteAddressWithoutCoordinate(hsWithSatScore.location)
         schoolWithContactCell.phoneNumberLabel.text = (hsWithSatScore.phoneNumber != nil) ? "Tel:  " + hsWithSatScore.phoneNumber! : ""
         schoolWithContactCell.websiteLabel.text = hsWithSatScore.website
         
@@ -59,7 +59,7 @@ class DetailCellsHelper {
      - Returns: UITableViewCell
      */
     static func tableViewCellWithAddress(_ tableView: UITableView, hsWithSatScore: NYCHighSchool) -> UITableViewCell {
-        let schoolWithAddressCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithAddressCellIdentifier) as! HSMapTableViewCell
+        let schoolWithAddressCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithMapCellIdentifier) as! HSMapTableViewCell
         
 //        if let highSchoolCoordinate = Utils.getCoodinateForSelectedHighSchool(hsWithSatScore.address){
 //            schoolWithAddressCell.addHSAnnotaionWithCoordinates(highSchoolCoordinate)

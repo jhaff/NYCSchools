@@ -16,18 +16,24 @@ class HSSATScoresTableViewCell: UITableViewCell {
     
     func configure(with hsWithSatScore: NYCHighSchool) {
         
-        //For some high school, there is no information of the average SAT score, display the static mesaage to the customers
+        //For some high schools, there is no information about SAT scores. Display a default message in that case.
         
         if (hsWithSatScore.satCriticalReadingAvgScore) != nil {
             readingScoreLabel.text = DetailConstants.averageSATReadingScore + String(hsWithSatScore.satCriticalReadingAvgScore!)
+        } else {
+            readingScoreLabel.text = DetailConstants.noSATScoreInfomationText
         }
         
         if (hsWithSatScore.satMathAvgScore) != nil {
             mathScoreLabel.text = DetailConstants.averageSATMathScore + String(hsWithSatScore.satMathAvgScore!)
+        } else {
+            mathScoreLabel.text = ""
         }
         
         if (hsWithSatScore.satWritingAvgScore) != nil {
             writingScoreLabel.text = DetailConstants.averageSATWritingScore + String(hsWithSatScore.satWritingAvgScore!)
+        } else {
+            writingScoreLabel.text = ""
         }
         
     }
@@ -46,5 +52,5 @@ class HSSATScoresTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

@@ -19,7 +19,7 @@ class DetailsViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -44,31 +44,69 @@ extension DetailsViewController: UITableViewDataSource {
 //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
-        case 0:
-            return DetailCellsHelper.tableViewCellWithSATScore(self.tableView, hsWithSatScore: DetailsViewController.nycHighSchool)
-        case 1:
-            return DetailCellsHelper.tableViewCellWithOverView(self.tableView, hsWithSatScore: DetailsViewController.nycHighSchool)
-        case 2:
-            return DetailCellsHelper.tableViewCellWithContactInfo(self.tableView, hsWithSatScore: DetailsViewController.nycHighSchool)
+        case 0: // name
+            let cell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolNameCellIdentifier) as! HSNameTableViewCell
+            
+            cell.configure(with: DetailsViewController.nycHighSchool)
+            
+            return cell
+        case 1: // scores
+            let cell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithSATScoreCellIdentifier) as! HSSATScoresTableViewCell
+                    
+            cell.configure(with: DetailsViewController.nycHighSchool)
+            
+            return cell
+        case 2: // overview
+            let cell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolOverviewCellIdentifier) as! HSOverviewTableViewCell
+            
+            cell.configure(with: DetailsViewController.nycHighSchool)
+            
+            return cell
+        case 3: // contact
+            let cell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolContactCellIdentifier) as! HSContactTableViewCell
+            
+            cell.configure(with: DetailsViewController.nycHighSchool)
+            
+            return cell
+        case 4: // address
+            let cell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithMapCellIdentifier) as! HSMapTableViewCell
+            
+            if let highSchoolCoordinate = Utils.getCoodinateForSelectedHighSchool(DetailsViewController.nycHighSchool.location) {
+                cell.addHSAnnotaionWithCoordinates(highSchoolCoordinate)
+            }
+            
+            return cell
+            
         default:
-            return DetailCellsHelper.tableViewCellWithAddress(self.tableView, hsWithSatScore: DetailsViewController.nycHighSchool)
+            return UITableViewCell()
         }
     }
+    
+   
 }
+
 extension DetailsViewController: UITableViewDelegate {
     
     //MARK: - UITable View Delegate
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0,1,2:
-            return UITableView.automaticDimension
-        default:
-            return UIScreen.main.bounds.width * 0.7
-        }
-    }
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       switch indexPath.row {
+       case 0: // name
+            return 40.00
+       case 1: // scores
+            return 160.00
+       case 2: // overview
+        return UITableView.automaticDimension
+       case 3: // contact
+            return 150.00
+       case 4: // map
+            return 200.00
+       default:
+            return 100.00
+       }
+}
 }

@@ -12,12 +12,13 @@ class NYCHighSchool: Codable {
 
     var dbn: String?
     var schoolName: String?
-    var overview: String?
+    var overviewParagraph: String?
     var satCriticalReadingAvgScore: String?
     var satMathAvgScore: String?
     var satWritingAvgScore: String?
-    var address: String?
-    var borough: String?
+    var location: String?
+    var neighborhood: String?
+    var borough:  String?
     var phoneNumber: String?
     var website:String?
         

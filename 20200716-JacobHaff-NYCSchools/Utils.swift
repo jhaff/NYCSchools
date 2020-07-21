@@ -16,7 +16,7 @@ class Utils {
     ///
     /// - Returns: Stirng, address of the high school
     static func getCompleteAddressWithoutCoordinate(_ schoolAddr: String?) -> String{
-        if let schoolAddress = schoolAddr{
+        if let schoolAddress = schoolAddr {
             let address = schoolAddress.components(separatedBy: "(")
             return address[0]
         }
@@ -75,10 +75,10 @@ class Utils {
                 nycHighSchool.schoolName = schoolNameOnject
             }
             if let overviewParagraphObject = json["overview_paragraph"] as? String {
-                nycHighSchool.overview = overviewParagraphObject
+                nycHighSchool.overviewParagraph = overviewParagraphObject
             }
             if let schoolAddressObject = json["location"] as? String {
-                nycHighSchool.address = schoolAddressObject
+                nycHighSchool.location = schoolAddressObject
             }
             if let schoolPhoneNumberObject = json["phone_number"] as? String {
                 nycHighSchool.phoneNumber = schoolPhoneNumberObject

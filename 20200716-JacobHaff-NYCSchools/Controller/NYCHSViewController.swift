@@ -153,7 +153,10 @@ extension NYCHSViewController: UITableViewDataSource {
         }
         
         cell.schoolNameLabel.text = school.schoolName
-        cell.schoolCityLabel.text = school.borough
+        
+        if (school.neighborhood != nil && school.borough != nil) {
+            cell.schoolCityLabel.text = school.neighborhood! + ", " + school.borough!.capitalized
+        }
         
         cell.schoolCombinedSATLabel.text = school.getCombinedSATScoreString()
                 
@@ -174,6 +177,10 @@ extension NYCHSViewController: UITableViewDelegate {
         if let selectedHighSchool = nycHSList?[indexPath.row] {
             DetailsViewController.nycHighSchool = selectedHighSchool
         }
+        
+        
+//        navigationController.title = DetailsViewController.nycHighSchool.schoolName
+        
         self.performSegue(withIdentifier: Constants.HSDetailsSegue, sender: self)
         
     }

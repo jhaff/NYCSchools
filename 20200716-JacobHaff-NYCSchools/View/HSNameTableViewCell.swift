@@ -16,6 +16,10 @@ class HSNameTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configure(with hsWithSatScore: NYCHighSchool) {
+        schoolNameLabel.text = hsWithSatScore.schoolName
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

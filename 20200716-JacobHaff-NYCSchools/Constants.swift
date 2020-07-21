@@ -21,8 +21,9 @@ struct DetailConstants {
     struct Cells {
         static let schoolWithSATScoreCellIdentifier =  "HSSATScoresTableViewCell"
         static let schoolOverviewCellIdentifier = "HSOverviewTableViewCell"
-        static let schoolWithAddressCellIdentifier = "HSMapTableViewCell"
-        static let schoolWithContactCellIdentifier = "HSContactTableViewCell"
+        static let schoolWithMapCellIdentifier = "HSMapTableViewCell"
+        static let schoolContactCellIdentifier = "HSContactTableViewCell"
+        static let schoolNameCellIdentifier = "HSNameTableViewCell"
     }
 
     

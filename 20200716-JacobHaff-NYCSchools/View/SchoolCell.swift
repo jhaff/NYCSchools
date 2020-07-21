@@ -45,7 +45,7 @@ class SchoolCell: UITableViewCell {
     }
     
     @IBAction func navigateButtonPressed(_ sender: UIButton) {
-        let schoolAddress = school.address
+        let schoolAddress = school.location
         
         
         
