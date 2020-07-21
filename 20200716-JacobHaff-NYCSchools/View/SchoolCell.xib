@@ -19,17 +19,20 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epT-KS-hiv" userLabel="Card View">
                         <rect key="frame" x="10" y="10" width="314" height="130"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hjd-8T-Ki4">
-                                <rect key="frame" x="103" y="44.5" width="108" height="41"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hjd-8T-Ki4">
+                                <rect key="frame" x="103" y="42.5" width="108" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tma-fS-mM8">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="eSF-Jn-MdS"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.1686073542" green="0.1764897406" blue="0.3607360423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZX-fM-bpO">
-                                        <rect key="frame" x="0.0" y="20.5" width="108" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="DZX-fM-bpO">
+                                        <rect key="frame" x="0.0" y="24.5" width="108" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.1686073542" green="0.1764897406" blue="0.3607360423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -39,10 +42,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-nK-GaZ">
                                 <rect key="frame" x="224" y="0.0" width="90" height="26"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCr-vX-pHW">
-                                        <rect key="frame" x="24" y="3" width="45" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCr-vX-pHW">
+                                        <rect key="frame" x="25.5" y="4" width="39.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -50,7 +52,9 @@
                                 <color key="backgroundColor" red="0.1686073542" green="0.1764897406" blue="0.3607360423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Vx0-l1-rd0"/>
+                                    <constraint firstItem="UCr-vX-pHW" firstAttribute="centerY" secondItem="mbc-nK-GaZ" secondAttribute="centerY" id="ffx-Jq-GXW"/>
                                     <constraint firstAttribute="height" constant="26" id="gDw-NS-gEi"/>
+                                    <constraint firstItem="UCr-vX-pHW" firstAttribute="centerX" secondItem="mbc-nK-GaZ" secondAttribute="centerX" id="x1F-9M-AwJ"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-rV-oQy">
@@ -97,6 +101,7 @@
             <connections>
                 <outlet property="cardView" destination="epT-KS-hiv" id="jqp-Zi-mXr"/>
                 <outlet property="schoolCityLabel" destination="DZX-fM-bpO" id="L0G-cu-Ptf"/>
+                <outlet property="schoolCombinedSATLabel" destination="UCr-vX-pHW" id="9Zs-xC-uwO"/>
                 <outlet property="schoolNameLabel" destination="Tma-fS-mM8" id="g3z-0z-oUB"/>
             </connections>
             <point key="canvasLocation" x="147.82608695652175" y="119.19642857142857"/>

@@ -69,10 +69,10 @@ class Utils {
             let nycHighSchool = NYCHighSchool()
             
             if let idObject = json["dbn"] as? String {
-                nycHighSchool.id = idObject
+                nycHighSchool.dbn = idObject
             }
             if let schoolNameOnject = json["school_name"] as? String {
-                nycHighSchool.name = schoolNameOnject
+                nycHighSchool.schoolName = schoolNameOnject
             }
             if let overviewParagraphObject = json["overview_paragraph"] as? String {
                 nycHighSchool.overview = overviewParagraphObject

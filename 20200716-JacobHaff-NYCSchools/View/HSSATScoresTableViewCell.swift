@@ -18,18 +18,21 @@ class HSSATScoresTableViewCell: UITableViewCell {
     @IBOutlet weak var writingScoreBar: UIView!
     @IBOutlet weak var mathScoreBar: UIView!
     
-    func configure(with HSWithSatScore: NYCHighSchool) {
+    func configure(with hsWithSatScore: NYCHighSchool) {
         
         //For some high school, there is no information of the average SAT score, display the static mesaage to the customers
-        readingScoreLabel.text = (HSWithSatScore.satCriticalReadingAvgScore != nil) ?  (DetailConstants.averageSATReadingScore + HSWithSatScore.satCriticalReadingAvgScore!) : DetailConstants.noSATScoreInfomationText
         
-        // Sets the Math Average Score
-        mathScoreLabel.isHidden = (HSWithSatScore.satMathAvgScore != nil) ? false : true
-        mathScoreLabel.text = (HSWithSatScore.satMathAvgScore != nil) ? (DetailConstants.averageSATMathScore + HSWithSatScore.satMathAvgScore!) : nil
+        if (hsWithSatScore.satCriticalReadingAvgScore) != nil {
+            readingScoreLabel.text = DetailConstants.averageSATReadingScore + String(hsWithSatScore.satCriticalReadingAvgScore!)
+        }
         
-        // Sets the Writing Average Score
-        writingScoreLabel.isHidden =  (HSWithSatScore.satWritinAvgScore != nil) ? false : true
-        writingScoreLabel.text = (HSWithSatScore.satWritinAvgScore != nil) ? (DetailConstants.averageSATWritingScore + HSWithSatScore.satWritinAvgScore!) : nil
+        if (hsWithSatScore.satMathAvgScore) != nil {
+            mathScoreLabel.text = DetailConstants.averageSATMathScore + String(hsWithSatScore.satMathAvgScore!)
+        }
+        
+        if (hsWithSatScore.satWritingAvgScore) != nil {
+            writingScoreLabel.text = DetailConstants.averageSATWritingScore + String(hsWithSatScore.satWritingAvgScore!)
+        }
         
     }
     

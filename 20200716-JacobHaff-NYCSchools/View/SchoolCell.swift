@@ -16,6 +16,7 @@ class SchoolCell: UITableViewCell {
     
     @IBOutlet weak var schoolNameLabel: UILabel!
     @IBOutlet weak var schoolCityLabel: UILabel!
+    @IBOutlet weak var schoolCombinedSATLabel: UILabel!
     
     var school = NYCHighSchool()
     
@@ -51,7 +52,7 @@ class SchoolCell: UITableViewCell {
         if let highSchoolCoordinate = getCoodinateForSelectedHighSchool(schoolAddress){
             let coordinate = CLLocationCoordinate2DMake(highSchoolCoordinate.latitude, highSchoolCoordinate.longitude)
             let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-            mapItem.name = "\(school.name!)"
+            mapItem.name = "\(school.schoolName!)"
             mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
         }
     }

@@ -38,7 +38,6 @@ class DetailCellsHelper {
         return schoolWithOverviewCell
     }
     
-    
     /**
     This function get the high school contact information with address, tel and website.
 

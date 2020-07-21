@@ -46,56 +46,30 @@ class NYCHSViewController: UIViewController {
      
      - Parameter satScoreObject: Data of Array composed with Dictionary
      */
-    private func addSatScoreToHighSchool(_ satScoreObject: Any) {
-        guard let highSchoolsWithSatScoreArr = satScoreObject as? [[String: Any]] else{
-            return
-        }
-        
-        for  highSchoolsWithSatScore in highSchoolsWithSatScoreArr{
-            if let matchedDBN = highSchoolsWithSatScore["dbn"] as? String{
-                //This will get the High School with the same DBN
-                let matchedHighSchools = self.nycHSList?.first(where: { (nycHighSchool) -> Bool in
-                    return nycHighSchool.id == matchedDBN
-                })
-                
-                guard matchedHighSchools != nil else{
-                    continue
-                }
-                
-                if let satReadingScoreObject =  highSchoolsWithSatScore["sat_critical_reading_avg_score"] as? String{
-                    matchedHighSchools!.satCriticalReadingAvgScore = satReadingScoreObject
-                }
-                
-                if let satMathScoreObject = highSchoolsWithSatScore["sat_math_avg_score"] as? String{
-                    matchedHighSchools!.satMathAvgScore = satMathScoreObject
-                }
-                
-                if let satWritingScoreObject =  highSchoolsWithSatScore["sat_writing_avg_score"] as? String{
-                    matchedHighSchools!.satWritinAvgScore = satWritingScoreObject
-                }
-                
-            }
-        }
-    }
+
     
     
     @IBAction func sortButtonPressed(_ sender: UIBarButtonItem) {
         //TESTING
-        doDopeThings()
-        
+        fetchHighSchoolList(completion: {
+            self.fetchHighSchoolSATSore(completion: {
+                self.tableView.reloadData()
+            })
+        })
+                
     }
     
     
     //MARK: Testing API shit
     
-    private func doDopeThings() {
+    private func fetchHighSchoolList(completion: @escaping () -> Void) {
         ServiceLayer.request(router: Router.getSchools) { (result: Result<[NYCHighSchool], Error>) in
             switch result {
             case .success(let schools):
-                print(result)
+                print(Date(), "HS")
                 
                 self.nycHSList = schools
-                self.tableView.reloadData()
+                completion()
             case .failure:
                 print(result)
             }
@@ -104,6 +78,50 @@ class NYCHSViewController: UIViewController {
         }
     }
     
+    // This function is will call the API to get all of the High School with SAT Score, and add to the exist model array according to the common parameter DBN.
+    private func fetchHighSchoolSATSore(completion: @escaping () -> Void) {
+        ServiceLayer.request(router: Router.getDetails) { (result: Result<[NYCHighSchool], Error>) in
+        switch result {
+        case .success(let satScoreObject):
+            print(Date(), "Score")
+            
+            self.addSatScoreToHighSchools(satScoreObject)
+            
+            completion()
+        case .failure:
+            print(result)
+        }
+    }
+    }
+    
+    /// This function is used to add the sat score to the high school
+    ///
+    /// - Parameter satScoreObject: Data of Array composed with Dictionary
+    func addSatScoreToHighSchools(_ satScoreObject: [NYCHighSchool]) {
+//        guard var highSchoolsWithSatScoreArr = satScoreObject as? [[String: Any]] else {
+//            return
+//        }
+        
+        for thing in satScoreObject {
+            if let matchedDBN = thing.dbn {
+                //This will get the High School with the Common DBN
+                let matchedHighSchool = self.nycHSList?.first(where: { (nycHighSchool) -> Bool in
+                    return nycHighSchool.dbn == matchedDBN
+                })
+                
+                 guard matchedHighSchool != nil else{
+                    continue
+                }
+                
+                matchedHighSchool?.satCriticalReadingAvgScore = thing.satCriticalReadingAvgScore
+                
+                matchedHighSchool?.satMathAvgScore = thing.satMathAvgScore
+
+                matchedHighSchool?.satWritingAvgScore = thing.satWritingAvgScore
+
+        }
+    }
+}
 }
 
 // MARK: UITableViewDataSource Extension
@@ -130,9 +148,14 @@ extension NYCHSViewController: UITableViewDataSource {
         
         if nycHSList?[indexPath.row] != nil {
             school = nycHSList![indexPath.row]
+        } else {
+            fatalError()
         }
         
-        cell.schoolNameLabel.text = school.name
+        cell.schoolNameLabel.text = school.schoolName
+        cell.schoolCityLabel.text = school.borough
+        
+        cell.schoolCombinedSATLabel.text = school.getCombinedSATScoreString()
                 
         return cell
     }
@@ -154,6 +177,7 @@ extension NYCHSViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150.00
+        return 180.00
     }
 }
+
