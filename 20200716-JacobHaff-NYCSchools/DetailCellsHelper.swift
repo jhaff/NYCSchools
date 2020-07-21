@@ -21,17 +21,6 @@ class DetailCellsHelper {
         let schoolWithSATScoresCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithSATScoreCellIdentifier) as! HSSATScoresTableViewCell
                 
         schoolWithSATScoresCell.configure(with: HSWithSatScore)
-//
-//        //For some high school, there is no information of the average SAT score, display the static mesaage to the customers
-//        schoolWithSATScoresCell.readingScoreLabel.text = (HSWithSatScore.satCriticalReadingAvgScore != nil) ?  (DetailConstants.averageSATReadingScore + HSWithSatScore.satCriticalReadingAvgScore!) : DetailConstants.noSATScoreInfomationText
-//
-//        // Sets the Math Average Score
-//        schoolWithSATScoresCell.mathScoreLabel.isHidden = (HSWithSatScore.satMathAvgScore != nil) ? false : true
-//        schoolWithSATScoresCell.mathScoreLabel.text = (HSWithSatScore.satMathAvgScore != nil) ? (DetailConstants.averageSATMathScore + HSWithSatScore.satMathAvgScore!) : nil
-//
-//        // Sets the Writing Average Score
-//        schoolWithSATScoresCell.writingScoreLabel.isHidden =  (HSWithSatScore.satWritinAvgScore != nil) ? false : true
-//        schoolWithSATScoresCell.writingScoreLabel.text = (HSWithSatScore.satWritinAvgScore != nil) ? (DetailConstants.averageSATWritingScore + HSWithSatScore.satWritinAvgScore!) : nil
         
         return schoolWithSATScoresCell
     }
@@ -71,7 +60,7 @@ class DetailCellsHelper {
      - Returns: UITableViewCell
      */
     static func tableViewCellWithAddress(_ tableView: UITableView, HSWithSatScore: NYCHighSchool) -> UITableViewCell {
-        let schoolWithAddressCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithAddressCellIdentifier) as! HSContactTableViewCell
+        let schoolWithAddressCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithAddressCellIdentifier) as! HSMapTableViewCell
         
 //        if let highSchoolCoordinate = Utils.getCoodinateForSelectedHighSchool(HSWithSatScore.address){
 //            schoolWithAddressCell.addHSAnnotaionWithCoordinates(highSchoolCoordinate)

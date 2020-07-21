@@ -200,12 +200,11 @@
                                             <outlet property="mathScoreLabel" destination="5ri-4K-Epr" id="eUh-dP-Jfg"/>
                                             <outlet property="readingScoreBar" destination="Zqr-gO-Ho5" id="CEi-7Y-Jf3"/>
                                             <outlet property="readingScoreLabel" destination="oi3-NV-vtN" id="jp5-TK-IA0"/>
-                                            <outlet property="schoolNameLabel" destination="uhb-5C-txc" id="gP2-nF-75e"/>
                                             <outlet property="writingScoreBar" destination="Oii-84-GHE" id="j6G-BZ-Mn4"/>
                                             <outlet property="writingScoreLabel" destination="azL-57-xuC" id="EsG-RC-esr"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HSOverviewTableCell" rowHeight="165" id="N4g-Nd-BPn" userLabel="HSOverviewTableViewCell" customClass="HSOverviewTableViewCell" customModule="_0200716_JacobHaff_NYCSchools" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HSOverviewTableViewCell" rowHeight="165" id="N4g-Nd-BPn" userLabel="HSOverviewTableViewCell" customClass="HSOverviewTableViewCell" customModule="_0200716_JacobHaff_NYCSchools" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="162" width="374" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N4g-Nd-BPn" id="UfT-Yv-8da">
@@ -242,7 +241,6 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="hsOverviewLbl" destination="Kz1-wh-OUz" id="xjk-51-WkM"/>
                                             <outlet property="overviewContentLabel" destination="Kz1-wh-OUz" id="idR-DT-Pmo"/>
                                         </connections>
                                     </tableViewCell>
@@ -295,15 +293,12 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="hsAddressLbl" destination="Ezd-LH-3PW" id="Kcy-8q-dNz"/>
-                                            <outlet property="hsPhoneLbl" destination="zD7-Yj-OSg" id="7RQ-Gl-fNV"/>
-                                            <outlet property="hsWebsiteLbl" destination="Hep-0X-JhN" id="mbs-Fg-YZv"/>
                                             <outlet property="phoneNumberLabel" destination="zD7-Yj-OSg" id="WiO-3e-Tcw"/>
                                             <outlet property="schoolAddressLabel" destination="Ezd-LH-3PW" id="iii-pl-nqO"/>
                                             <outlet property="websiteLabel" destination="Hep-0X-JhN" id="aWO-Qw-NrD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HSAddressTableViewCell" rowHeight="165" id="Abs-GQ-6Vo" userLabel="HSMapTableViewCell" customClass="HSMapTableViewCell" customModule="_0200716_JacobHaff_NYCSchools" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HSMapTableViewCell" rowHeight="165" id="Abs-GQ-6Vo" userLabel="HSMapTableViewCell" customClass="HSMapTableViewCell" customModule="_0200716_JacobHaff_NYCSchools" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="453" width="374" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Abs-GQ-6Vo" id="FLE-cj-ANe">
@@ -322,9 +317,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                        <connections>
-                                            <outlet property="hsAddressMapView" destination="RNL-dQ-YE7" id="W5d-Jf-Myg"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

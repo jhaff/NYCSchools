@@ -23,7 +23,7 @@ class NYCHSViewController: UIViewController {
         tableView.register(UINib(nibName: "SchoolCell", bundle: nil), forCellReuseIdentifier: "SchoolCell")
         
         DispatchQueue.global(qos: .userInitiated).async {
-//            self.fetchNYCHighSchoolInformation()
+//            self.doDopeThings()
         }
         
     }
@@ -41,56 +41,6 @@ class NYCHSViewController: UIViewController {
         
         
     }
-    
-    //MARK: - API Calls and JSON parsing
-    
-    //TODO: Extract these methods to an API class wirth static methods. Maybe another file for JSON parsing.
-    
-//    func fetchNYCHighSchoolInformation() {
-//        guard let highSchoolsURL = URL(string: Constants.highSchoolsURL) else {
-//            return
-//        }
-//        
-//        let request = URLRequest(url:highSchoolsURL)
-//        let session = URLSession.shared
-//        let task = session.dataTask(with: request) { [weak self] (highSchoolsData, response, error)  in
-//            if highSchoolsData != nil{
-//                do{
-//                    let highSchoolsObject = try JSONSerialization.jsonObject(with: highSchoolsData!, options: [])
-//                    self?.nycHSList = Utils.highSchoolsJSONDataToModelArray(highSchoolsObject)
-//                    self?.fetchHighSchoolDetails()
-//                }catch{
-//                    print("NYC HS JSON error: \(error.localizedDescription)")
-//                }
-//            }
-//        }
-//        task.resume()
-//        
-//        print(nycHSList)
-//    }
-    
-    private func fetchHighSchoolDetails() {
-        guard let highSchoolDetailsURL = URL(string: Constants.schoolDetailsUrl) else {
-            return
-        }
-        let request = URLRequest(url:highSchoolDetailsURL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) {[weak self] (schoolDetailsData, response, error) in
-            if schoolDetailsData != nil{
-                do{
-                    let detailsObject = try JSONSerialization.jsonObject(with: schoolDetailsData!, options: [])
-                    self?.addSatScoreToHighSchool(detailsObject)
-                    DispatchQueue.main.async {[weak self] in
-                        self?.tableView.reloadData()
-                    }
-                }catch{
-                    debugPrint("high school with sat score json error: \(error.localizedDescription)")
-                }
-            }
-        }
-        task.resume()
-    }
-    
     /**
      This function is used to add the sat score to the high school
      
@@ -141,10 +91,10 @@ class NYCHSViewController: UIViewController {
     private func doDopeThings() {
         ServiceLayer.request(router: Router.getSchools) { (result: Result<[NYCHighSchool], Error>) in
             switch result {
-            case .success(let scools):
+            case .success(let schools):
                 print(result)
                 
-                self.nycHSList = scools
+                self.nycHSList = schools
                 self.tableView.reloadData()
             case .failure:
                 print(result)
@@ -176,7 +126,13 @@ extension NYCHSViewController: UITableViewDataSource {
                 
 //        cell.school = nycHSList?[indexPath.row] as! NYCHighSchool
         
-        cell.schoolNameLabel.text = nycHSList?[indexPath.row].name
+        var school = NYCHighSchool()
+        
+        if nycHSList?[indexPath.row] != nil {
+            school = nycHSList![indexPath.row]
+        }
+        
+        cell.schoolNameLabel.text = school.name
                 
         return cell
     }
