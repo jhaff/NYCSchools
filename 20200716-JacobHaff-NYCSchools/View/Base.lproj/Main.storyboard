@@ -96,11 +96,11 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="CSm-fb-dTl">
                                                     <rect key="frame" x="20" y="0.0" width="354" height="82"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="zQp-hM-gLk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="308" height="82"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="9BH-pf-PsB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="82"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAT Scores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhb-5C-txc" userLabel="SAT Scores Label">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="308" height="25"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="25" id="fGW-Ou-UlG"/>
                                                                     </constraints>
@@ -108,43 +108,8 @@
                                                                     <color key="textColor" red="0.1686073542" green="0.1764897406" blue="0.3607360423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zqr-gO-Ho5">
-                                                                    <rect key="frame" x="0.0" y="28" width="308" height="16"/>
-                                                                    <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="16" id="uPV-Lt-dIW"/>
-                                                                    </constraints>
-                                                                </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oii-84-GHE">
-                                                                    <rect key="frame" x="0.0" y="47" width="308" height="16"/>
-                                                                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="16" id="Mk4-9i-4QG"/>
-                                                                    </constraints>
-                                                                </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5G-pe-3lA">
-                                                                    <rect key="frame" x="0.0" y="66" width="308" height="16"/>
-                                                                    <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="16" id="Fag-2u-DQg"/>
-                                                                    </constraints>
-                                                                </view>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9BH-pf-PsB">
-                                                            <rect key="frame" x="312" y="0.0" width="42" height="82"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3R-el-LWi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="25"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="30" id="iOU-sS-7yN"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi3-NV-vtN">
-                                                                    <rect key="frame" x="0.0" y="28" width="42" height="16"/>
+                                                                    <rect key="frame" x="0.0" y="22" width="354" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="YHa-CE-hJt"/>
                                                                     </constraints>
@@ -153,7 +118,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azL-57-xuC">
-                                                                    <rect key="frame" x="0.0" y="47" width="42" height="16"/>
+                                                                    <rect key="frame" x="0.0" y="44" width="354" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="qJ0-67-VWC"/>
                                                                     </constraints>
@@ -162,7 +127,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ri-4K-Epr">
-                                                                    <rect key="frame" x="0.0" y="66" width="42" height="16"/>
+                                                                    <rect key="frame" x="0.0" y="66" width="354" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="62P-jf-rU1"/>
                                                                     </constraints>
@@ -184,11 +149,8 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="mathScoreBar" destination="y5G-pe-3lA" id="z4f-bf-m2x"/>
                                             <outlet property="mathScoreLabel" destination="5ri-4K-Epr" id="eUh-dP-Jfg"/>
-                                            <outlet property="readingScoreBar" destination="Zqr-gO-Ho5" id="CEi-7Y-Jf3"/>
                                             <outlet property="readingScoreLabel" destination="oi3-NV-vtN" id="jp5-TK-IA0"/>
-                                            <outlet property="writingScoreBar" destination="Oii-84-GHE" id="j6G-BZ-Mn4"/>
                                             <outlet property="writingScoreLabel" destination="azL-57-xuC" id="EsG-RC-esr"/>
                                         </connections>
                                     </tableViewCell>

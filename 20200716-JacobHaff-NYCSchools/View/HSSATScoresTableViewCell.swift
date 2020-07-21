@@ -14,25 +14,12 @@ class HSSATScoresTableViewCell: UITableViewCell {
     @IBOutlet weak var writingScoreLabel: UILabel!
     @IBOutlet weak var mathScoreLabel: UILabel!
     
-    @IBOutlet weak var readingScoreBar: UIView!
-    @IBOutlet weak var writingScoreBar: UIView!
-    @IBOutlet weak var mathScoreBar: UIView!
-    
     func configure(with hsWithSatScore: NYCHighSchool) {
         
         //For some high school, there is no information of the average SAT score, display the static mesaage to the customers
         
         if (hsWithSatScore.satCriticalReadingAvgScore) != nil {
             readingScoreLabel.text = DetailConstants.averageSATReadingScore + String(hsWithSatScore.satCriticalReadingAvgScore!)
-//            readingScoreBar.frame.size.width = readingScoreBar.frame.size.width * CGFloat(calculateSATPercentage(satScore: Int(hsWithSatScore.satCriticalReadingAvgScore!)!))
-            
-            var frame: CGRect = readingScoreBar.frame
-            
-            frame.size.width = readingScoreBar.frame.size.width * CGFloat(calculateSATPercentage(satScore: Int(hsWithSatScore.satCriticalReadingAvgScore!)!))
-            
-            readingScoreBar.frame = frame
-            
-            readingScoreBar.setNeedsDisplay()
         }
         
         if (hsWithSatScore.satMathAvgScore) != nil {
