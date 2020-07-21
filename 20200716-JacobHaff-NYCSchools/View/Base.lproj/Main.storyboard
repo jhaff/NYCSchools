@@ -29,13 +29,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KvG-hp-Sxp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="NYC Schools" id="1aj-S2-okf">
-                        <barButtonItem key="rightBarButtonItem" title="Sort" id="9sD-nw-upy">
-                            <connections>
-                                <action selector="sortButtonPressed:" destination="h6V-h2-76r" id="kgN-6J-XKe"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="NYC Schools" id="1aj-S2-okf"/>
                     <connections>
                         <outlet property="tableView" destination="OWK-pi-u2M" id="faP-ot-X72"/>
                         <segue destination="e3b-RT-iLb" kind="show" identifier="HSDetailsSegue" id="Sts-KO-4cn"/>

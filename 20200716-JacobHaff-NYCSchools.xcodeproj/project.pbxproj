@@ -28,7 +28,6 @@
 		35CDCB4D24C544FC003B6355 /* HSContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB4C24C544FC003B6355 /* HSContactTableViewCell.swift */; };
 		35CDCB4F24C545F7003B6355 /* HSNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB4E24C545F7003B6355 /* HSNameTableViewCell.swift */; };
 		35CDCB5124C546BF003B6355 /* HSMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB5024C546BF003B6355 /* HSMapTableViewCell.swift */; };
-		35CDCB5324C55AB5003B6355 /* DetailCellsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB5224C55AB5003B6355 /* DetailCellsHelper.swift */; };
 		35CDCB5524C5D7C6003B6355 /* HSSATScoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDCB5424C5D7C6003B6355 /* HSSATScoresTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +77,6 @@
 		35CDCB4C24C544FC003B6355 /* HSContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSContactTableViewCell.swift; sourceTree = "<group>"; };
 		35CDCB4E24C545F7003B6355 /* HSNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSNameTableViewCell.swift; sourceTree = "<group>"; };
 		35CDCB5024C546BF003B6355 /* HSMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSMapTableViewCell.swift; sourceTree = "<group>"; };
-		35CDCB5224C55AB5003B6355 /* DetailCellsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellsHelper.swift; sourceTree = "<group>"; };
 		35CDCB5424C5D7C6003B6355 /* HSSATScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSSATScoresTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +140,6 @@
 				35CDCB2C24C1081E003B6355 /* Assets.xcassets */,
 				35CDCAFE24C0FCDA003B6355 /* LaunchScreen.storyboard */,
 				35CDCB3624C12E62003B6355 /* Utils.swift */,
-				35CDCB5224C55AB5003B6355 /* DetailCellsHelper.swift */,
 				35CDCB0124C0FCDA003B6355 /* Info.plist */,
 			);
 			path = "20200716-JacobHaff-NYCSchools";
@@ -350,7 +347,6 @@
 				35CDCB4F24C545F7003B6355 /* HSNameTableViewCell.swift in Sources */,
 				35CDCB3E24C4D402003B6355 /* Router.swift in Sources */,
 				35CDCB3124C12D49003B6355 /* NYCHSViewController.swift in Sources */,
-				35CDCB5324C55AB5003B6355 /* DetailCellsHelper.swift in Sources */,
 				35CDCB5524C5D7C6003B6355 /* HSSATScoresTableViewCell.swift in Sources */,
 				35CDCB3324C12E1A003B6355 /* Constants.swift in Sources */,
 				35CDCB4D24C544FC003B6355 /* HSContactTableViewCell.swift in Sources */,

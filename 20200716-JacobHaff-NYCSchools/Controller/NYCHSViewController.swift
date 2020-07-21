@@ -23,7 +23,13 @@ class NYCHSViewController: UIViewController {
         tableView.register(UINib(nibName: "SchoolCell", bundle: nil), forCellReuseIdentifier: "SchoolCell")
         
         DispatchQueue.global(qos: .userInitiated).async {
-//            self.doDopeThings()
+            
+            self.fetchHighSchoolList(completion: {
+            self.fetchHighSchoolSATSore(completion: {
+                self.tableView.reloadData()
+            })
+        })
+            
         }
         
     }
@@ -60,14 +66,12 @@ class NYCHSViewController: UIViewController {
     }
     
     
-    //MARK: Testing API shit
+    //MARK: API layer calls
     
     private func fetchHighSchoolList(completion: @escaping () -> Void) {
         ServiceLayer.request(router: Router.getSchools) { (result: Result<[NYCHighSchool], Error>) in
             switch result {
             case .success(let schools):
-                print(Date(), "HS")
-                
                 self.nycHSList = schools
                 completion()
             case .failure:
@@ -77,14 +81,16 @@ class NYCHSViewController: UIViewController {
     
         }
     }
-    
-    // This function is will call the API to get all of the High School with SAT Score, and add to the exist model array according to the common parameter DBN.
+        
+    /**
+     This function is will call the API to get all of the High School with SAT Score, and add to the exist model array according to the common parameter DBN.
+     
+    - Parameter completion: closure to be executed after a successful API call
+     */
     private func fetchHighSchoolSATSore(completion: @escaping () -> Void) {
         ServiceLayer.request(router: Router.getDetails) { (result: Result<[NYCHighSchool], Error>) in
         switch result {
         case .success(let satScoreObject):
-            print(Date(), "Score")
-            
             self.addSatScoreToHighSchools(satScoreObject)
             
             completion()
@@ -94,16 +100,14 @@ class NYCHSViewController: UIViewController {
     }
     }
     
-    /// This function is used to add the sat score to the high school
-    ///
-    /// - Parameter satScoreObject: Data of Array composed with Dictionary
+    /**
+    This function is used to add ALL the sat scores to ALL rhw  high schools
+    
+    - Parameter satScoreObjects: Array of NYCHighSchool objects with SAT data only
+     */
     func addSatScoreToHighSchools(_ satScoreObject: [NYCHighSchool]) {
-//        guard var highSchoolsWithSatScoreArr = satScoreObject as? [[String: Any]] else {
-//            return
-//        }
-        
-        for thing in satScoreObject {
-            if let matchedDBN = thing.dbn {
+        for satScoreObject in satScoreObject {
+            if let matchedDBN = satScoreObject.dbn {
                 //This will get the High School with the Common DBN
                 let matchedHighSchool = self.nycHSList?.first(where: { (nycHighSchool) -> Bool in
                     return nycHighSchool.dbn == matchedDBN
@@ -113,11 +117,11 @@ class NYCHSViewController: UIViewController {
                     continue
                 }
                 
-                matchedHighSchool?.satCriticalReadingAvgScore = thing.satCriticalReadingAvgScore
+                matchedHighSchool?.satCriticalReadingAvgScore = satScoreObject.satCriticalReadingAvgScore
                 
-                matchedHighSchool?.satMathAvgScore = thing.satMathAvgScore
+                matchedHighSchool?.satMathAvgScore = satScoreObject.satMathAvgScore
 
-                matchedHighSchool?.satWritingAvgScore = thing.satWritingAvgScore
+                matchedHighSchool?.satWritingAvgScore = satScoreObject.satWritingAvgScore
 
         }
     }
@@ -141,9 +145,7 @@ extension NYCHSViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SchoolCell = self.tableView.dequeueReusableCell(withIdentifier: Constants.hsCellIdentifier, for: indexPath) as! SchoolCell
-                
-//        cell.school = nycHSList?[indexPath.row] as! NYCHighSchool
-        
+                        
         var school = NYCHighSchool()
         
         if nycHSList?[indexPath.row] != nil {
@@ -177,9 +179,6 @@ extension NYCHSViewController: UITableViewDelegate {
         if let selectedHighSchool = nycHSList?[indexPath.row] {
             DetailsViewController.nycHighSchool = selectedHighSchool
         }
-        
-        
-//        navigationController.title = DetailsViewController.nycHighSchool.schoolName
         
         self.performSegue(withIdentifier: Constants.HSDetailsSegue, sender: self)
         
