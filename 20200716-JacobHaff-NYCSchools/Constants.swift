@@ -27,7 +27,7 @@ struct DetailConstants {
 
     
     static let noSATScoreInfomationText = "There is no SAT score information for this high school"
-    static let averageSATReadingScore = "Critical Reading: "
+    static let averageSATReadingScore = "Reading: "
     static let averageSATMathScore = "Math: "
     static let averageSATWritingScore = "Writing: "
 }

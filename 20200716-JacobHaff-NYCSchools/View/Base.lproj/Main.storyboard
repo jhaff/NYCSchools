@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--NYC Schools-->
         <scene sceneID="qO4-gC-uum">
             <objects>
                 <viewController id="h6V-h2-76r" customClass="NYCHSViewController" customModule="_0200716_JacobHaff_NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,33 +15,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lqb-j7-L9H">
-                                <rect key="frame" x="20" y="93" width="374" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="3tu-lk-wq4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OWK-pi-u2M">
-                                <rect key="frame" x="20" y="132" width="374" height="730"/>
+                                <rect key="frame" x="20" y="88" width="374" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Lqb-j7-L9H" firstAttribute="leading" secondItem="KvG-hp-Sxp" secondAttribute="leading" constant="20" id="5xK-pC-fFN"/>
-                            <constraint firstItem="Lqb-j7-L9H" firstAttribute="centerX" secondItem="Z4R-4M-UHn" secondAttribute="centerX" id="IOI-FB-ImI"/>
                             <constraint firstItem="OWK-pi-u2M" firstAttribute="leading" secondItem="KvG-hp-Sxp" secondAttribute="leading" constant="20" id="Nj7-OQ-LOS"/>
                             <constraint firstItem="KvG-hp-Sxp" firstAttribute="trailing" secondItem="OWK-pi-u2M" secondAttribute="trailing" constant="20" id="QSz-Ki-o5U"/>
-                            <constraint firstItem="OWK-pi-u2M" firstAttribute="top" secondItem="Lqb-j7-L9H" secondAttribute="bottom" constant="5" id="TzU-N6-RMl"/>
-                            <constraint firstItem="Lqb-j7-L9H" firstAttribute="top" secondItem="KvG-hp-Sxp" secondAttribute="top" constant="5" id="bXY-ST-vKA"/>
-                            <constraint firstItem="KvG-hp-Sxp" firstAttribute="trailing" secondItem="Lqb-j7-L9H" secondAttribute="trailing" constant="20" id="haX-GK-b3K"/>
+                            <constraint firstItem="OWK-pi-u2M" firstAttribute="top" secondItem="KvG-hp-Sxp" secondAttribute="top" id="oBV-9H-yNG"/>
                             <constraint firstItem="KvG-hp-Sxp" firstAttribute="bottom" secondItem="OWK-pi-u2M" secondAttribute="bottom" id="yMP-nz-o0s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KvG-hp-Sxp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1aj-S2-okf">
+                    <navigationItem key="navigationItem" title="NYC Schools" id="1aj-S2-okf">
                         <barButtonItem key="rightBarButtonItem" title="Sort" id="9sD-nw-upy">
                             <connections>
                                 <action selector="sortButtonPressed:" destination="h6V-h2-76r" id="kgN-6J-XKe"/>
@@ -324,7 +312,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Q5e-VF-1Ar"/>
                     </view>
-                    <navigationItem key="navigationItem" id="J8e-7r-Xzv"/>
+                    <navigationItem key="navigationItem" title="Details" id="J8e-7r-Xzv">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="go6-5L-57s"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="LwC-0B-vxC" id="Rgj-hK-C8f"/>
                     </connections>

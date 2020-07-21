@@ -171,7 +171,9 @@ extension NYCHSViewController: UITableViewDataSource {
 extension NYCHSViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let selectedHighSchool = nycHSList?[indexPath.row]
+        if let selectedHighSchool = nycHSList?[indexPath.row] {
+            DetailsViewController.nycHighSchool = selectedHighSchool
+        }
         self.performSegue(withIdentifier: Constants.HSDetailsSegue, sender: self)
         
     }

@@ -12,7 +12,7 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var nycHighSchool = NYCHighSchool()
+    static var nycHighSchool = NYCHighSchool()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +50,13 @@ extension DetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            return DetailCellsHelper.tableViewCellWithSATScore(self.tableView, HSWithSatScore: self.nycHighSchool)
+            return DetailCellsHelper.tableViewCellWithSATScore(self.tableView, hsWithSatScore: DetailsViewController.nycHighSchool)
         case 1:
-            return DetailCellsHelper.tableViewCellWithOverView(self.tableView, HSWithSatScore: self.nycHighSchool)
+            return DetailCellsHelper.tableViewCellWithOverView(self.tableView, hsWithSatScore: DetailsViewController.nycHighSchool)
         case 2:
-            return DetailCellsHelper.tableViewCellWithContactInfo(self.tableView, HSWithSatScore: self.nycHighSchool)
+            return DetailCellsHelper.tableViewCellWithContactInfo(self.tableView, hsWithSatScore: DetailsViewController.nycHighSchool)
         default:
-            return DetailCellsHelper.tableViewCellWithAddress(self.tableView, HSWithSatScore: self.nycHighSchool)
+            return DetailCellsHelper.tableViewCellWithAddress(self.tableView, hsWithSatScore: DetailsViewController.nycHighSchool)
         }
     }
 }

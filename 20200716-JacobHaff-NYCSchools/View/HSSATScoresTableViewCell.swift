@@ -24,6 +24,15 @@ class HSSATScoresTableViewCell: UITableViewCell {
         
         if (hsWithSatScore.satCriticalReadingAvgScore) != nil {
             readingScoreLabel.text = DetailConstants.averageSATReadingScore + String(hsWithSatScore.satCriticalReadingAvgScore!)
+//            readingScoreBar.frame.size.width = readingScoreBar.frame.size.width * CGFloat(calculateSATPercentage(satScore: Int(hsWithSatScore.satCriticalReadingAvgScore!)!))
+            
+            var frame: CGRect = readingScoreBar.frame
+            
+            frame.size.width = readingScoreBar.frame.size.width * CGFloat(calculateSATPercentage(satScore: Int(hsWithSatScore.satCriticalReadingAvgScore!)!))
+            
+            readingScoreBar.frame = frame
+            
+            readingScoreBar.setNeedsDisplay()
         }
         
         if (hsWithSatScore.satMathAvgScore) != nil {
@@ -34,6 +43,10 @@ class HSSATScoresTableViewCell: UITableViewCell {
             writingScoreLabel.text = DetailConstants.averageSATWritingScore + String(hsWithSatScore.satWritingAvgScore!)
         }
         
+    }
+    
+    func calculateSATPercentage(satScore: Int) -> Float {
+        return Float(satScore) / 800.00
     }
     
     override func awakeFromNib() {

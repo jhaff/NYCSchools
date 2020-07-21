@@ -17,10 +17,10 @@ class DetailCellsHelper {
     
      - Returns: UITableViewCell
      */
-    static func tableViewCellWithSATScore(_ tableView: UITableView, HSWithSatScore: NYCHighSchool) -> UITableViewCell {
+    static func tableViewCellWithSATScore(_ tableView: UITableView, hsWithSatScore: NYCHighSchool) -> UITableViewCell {
         let schoolWithSATScoresCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithSATScoreCellIdentifier) as! HSSATScoresTableViewCell
                 
-        schoolWithSATScoresCell.configure(with: HSWithSatScore)
+        schoolWithSATScoresCell.configure(with: hsWithSatScore)
         
         return schoolWithSATScoresCell
     }
@@ -30,10 +30,10 @@ class DetailCellsHelper {
     
     - Returns: UITableViewCell
      */
-    static func tableViewCellWithOverView(_ tableView: UITableView, HSWithSatScore: NYCHighSchool) -> UITableViewCell {
+    static func tableViewCellWithOverView(_ tableView: UITableView, hsWithSatScore: NYCHighSchool) -> UITableViewCell {
         let schoolWithOverviewCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolOverviewCellIdentifier) as! HSOverviewTableViewCell
         
-        schoolWithOverviewCell.overviewContentLabel.text = HSWithSatScore.overview
+        schoolWithOverviewCell.overviewContentLabel.text = hsWithSatScore.overview
         
         return schoolWithOverviewCell
     }
@@ -43,12 +43,12 @@ class DetailCellsHelper {
 
     - Returns: UITableViewCell
      */
-    static func tableViewCellWithContactInfo(_ tableView: UITableView, HSWithSatScore: NYCHighSchool) -> UITableViewCell {
+    static func tableViewCellWithContactInfo(_ tableView: UITableView, hsWithSatScore: NYCHighSchool) -> UITableViewCell {
         let schoolWithContactCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithContactCellIdentifier) as! HSContactTableViewCell
         
-        schoolWithContactCell.schoolAddressLabel.text = "Address: " + Utils.getCompleteAddressWithoutCoordinate(HSWithSatScore.address)
-        schoolWithContactCell.phoneNumberLabel.text = (HSWithSatScore.phoneNumber != nil) ? "Tel:  " + HSWithSatScore.phoneNumber! : ""
-        schoolWithContactCell.websiteLabel.text = HSWithSatScore.website
+        schoolWithContactCell.schoolAddressLabel.text = "Address: " + Utils.getCompleteAddressWithoutCoordinate(hsWithSatScore.address)
+        schoolWithContactCell.phoneNumberLabel.text = (hsWithSatScore.phoneNumber != nil) ? "Tel:  " + hsWithSatScore.phoneNumber! : ""
+        schoolWithContactCell.websiteLabel.text = hsWithSatScore.website
         
         return schoolWithContactCell
     }
@@ -58,10 +58,10 @@ class DetailCellsHelper {
 
      - Returns: UITableViewCell
      */
-    static func tableViewCellWithAddress(_ tableView: UITableView, HSWithSatScore: NYCHighSchool) -> UITableViewCell {
+    static func tableViewCellWithAddress(_ tableView: UITableView, hsWithSatScore: NYCHighSchool) -> UITableViewCell {
         let schoolWithAddressCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithAddressCellIdentifier) as! HSMapTableViewCell
         
-//        if let highSchoolCoordinate = Utils.getCoodinateForSelectedHighSchool(HSWithSatScore.address){
+//        if let highSchoolCoordinate = Utils.getCoodinateForSelectedHighSchool(hsWithSatScore.address){
 //            schoolWithAddressCell.addHSAnnotaionWithCoordinates(highSchoolCoordinate)
 //        }
         
