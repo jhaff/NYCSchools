@@ -6,32 +6,28 @@
 //  Copyright © 2020 Jacob Haff. All rights reserved.
 //
 
-import UIKit
-import MapKit
 import CoreLocation
+import MapKit
+import UIKit
 
 class HSMapTableViewCell: UITableViewCell {
+    @IBOutlet var mapView: MKMapView!
 
-    @IBOutlet weak var mapView: MKMapView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    func configure(with hsWithSatScore: NYCHighSchool) {
 
-    }
-    
-    func addHSAnnotaionWithCoordinates(_ hsCoordinates: CLLocationCoordinate2D){
-        
+    func configure(with _: NYCHighSchool) {}
+
+    func addHSAnnotaionWithCoordinates(_ hsCoordinates: CLLocationCoordinate2D) {
         let highSchoolAnnotation = MKPointAnnotation()
         highSchoolAnnotation.coordinate = hsCoordinates
-        self.mapView.addAnnotation(highSchoolAnnotation)
+        mapView.addAnnotation(highSchoolAnnotation)
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: highSchoolAnnotation.coordinate, span: span)
-        let adjustRegion = self.mapView.regionThatFits(region)
-        self.mapView.setRegion(adjustRegion, animated:true)
+        let adjustRegion = mapView.regionThatFits(region)
+        mapView.setRegion(adjustRegion, animated: true)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -39,5 +35,4 @@ class HSMapTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

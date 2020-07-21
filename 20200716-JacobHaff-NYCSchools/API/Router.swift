@@ -9,18 +9,17 @@
 import Foundation
 
 enum Router {
-    
     case getSchools
     case getDetails
-    
+
     var scheme: String {
         return "https"
     }
-    
+
     var host: String {
         return "data.cityofnewyork.us"
     }
-    
+
     var path: String {
         switch self {
         case .getSchools:
@@ -29,10 +28,8 @@ enum Router {
             return "/resource/734v-jeq5.json"
         }
     }
-    
+
     var method: String {
         return "GET"
     }
-    
-    
 }

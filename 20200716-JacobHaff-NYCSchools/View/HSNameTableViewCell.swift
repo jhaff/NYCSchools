@@ -9,14 +9,13 @@
 import UIKit
 
 class HSNameTableViewCell: UITableViewCell {
+    @IBOutlet var schoolNameLabel: UILabel!
 
-    @IBOutlet weak var schoolNameLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     func configure(with hsWithSatScore: NYCHighSchool) {
         schoolNameLabel.text = hsWithSatScore.schoolName
     }
@@ -26,5 +25,4 @@ class HSNameTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

@@ -9,30 +9,26 @@
 import UIKit
 
 class HSContactTableViewCell: UITableViewCell {
+    @IBOutlet var schoolAddressLabel: UILabel!
+    @IBOutlet var phoneNumberLabel: UILabel!
+    @IBOutlet var websiteLabel: UILabel!
 
-    @IBOutlet weak var schoolAddressLabel: UILabel!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
-    @IBOutlet weak var websiteLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    func configure(with hsWithSatScore: NYCHighSchool) {
-            
-        schoolAddressLabel.text = "Address: " + Utils.getCompleteAddressWithoutCoordinate(hsWithSatScore.location)
-              
-        phoneNumberLabel.text = (hsWithSatScore.phoneNumber != nil) ? "Tel:  " + hsWithSatScore.phoneNumber! : ""
-               
-        websiteLabel.text = hsWithSatScore.website
 
+    func configure(with hsWithSatScore: NYCHighSchool) {
+        schoolAddressLabel.text = "Address: " + Utils.getCompleteAddressWithoutCoordinate(hsWithSatScore.location)
+
+        phoneNumberLabel.text = (hsWithSatScore.phoneNumber != nil) ? "Tel:  " + hsWithSatScore.phoneNumber! : ""
+
+        websiteLabel.text = hsWithSatScore.website
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-
 }

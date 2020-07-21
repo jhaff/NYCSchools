@@ -9,8 +9,7 @@
 import Foundation
 
 class ServiceLayer {
-    class func request<T: Codable>(router: Router, completion: @escaping (Result<[T], Error>) -> ()) {
-
+    class func request<T: Codable>(router: Router, completion: @escaping (Result<[T], Error>) -> Void) {
         var components = URLComponents()
         components.scheme = router.scheme
         components.host = router.host
@@ -22,7 +21,7 @@ class ServiceLayer {
 
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest) { data, response, error in
-            
+
 //            let testTHing = try? JSONSerialization.jsonObject(with: data!, options: [])
 
             guard error == nil else {
@@ -36,21 +35,15 @@ class ServiceLayer {
             guard let data = data else {
                 return
             }
-                        
+
             do {
-                
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                
-            let responseObject = try decoder.decode([T].self, from: data)
-                
-                
-                
-            DispatchQueue.main.async {
+
+                let responseObject = try decoder.decode([T].self, from: data)
+
+                DispatchQueue.main.async {
                     completion(.success(responseObject))
-                    
-                    
-            
                 }
             } catch {
                 print(error)

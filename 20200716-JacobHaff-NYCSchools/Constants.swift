@@ -14,19 +14,17 @@ struct Constants {
 
     static let hsCellIdentifier = "SchoolCell"
     static let HSDetailsSegue = "HSDetailsSegue"
-
 }
 
 struct DetailConstants {
     struct Cells {
-        static let schoolWithSATScoreCellIdentifier =  "HSSATScoresTableViewCell"
+        static let schoolWithSATScoreCellIdentifier = "HSSATScoresTableViewCell"
         static let schoolOverviewCellIdentifier = "HSOverviewTableViewCell"
         static let schoolWithMapCellIdentifier = "HSMapTableViewCell"
         static let schoolContactCellIdentifier = "HSContactTableViewCell"
         static let schoolNameCellIdentifier = "HSNameTableViewCell"
     }
 
-    
     static let noSATScoreInfomationText = "There is no SAT score information for this high school"
     static let averageSATReadingScore = "Reading: "
     static let averageSATMathScore = "Math: "

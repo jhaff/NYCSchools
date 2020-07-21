@@ -6,25 +6,23 @@
 //  Copyright © 2020 Jacob Haff. All rights reserved.
 //
 
-import UIKit
 import CoreLocation
 import MapKit
+import UIKit
 
 class SchoolCell: UITableViewCell {
-    
-    @IBOutlet weak var cardView: UIView!
-    
-    @IBOutlet weak var schoolNameLabel: UILabel!
-    @IBOutlet weak var schoolCityLabel: UILabel!
-    @IBOutlet weak var schoolCombinedSATLabel: UILabel!
-    
+    @IBOutlet var cardView: UIView!
+
+    @IBOutlet var schoolNameLabel: UILabel!
+    @IBOutlet var schoolCityLabel: UILabel!
+    @IBOutlet var schoolCombinedSATLabel: UILabel!
+
     var school = NYCHighSchool()
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
         setupCardViewShadows()
     }
 
@@ -33,7 +31,7 @@ class SchoolCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func setupCardViewShadows() {
         let view = cardView
         view?.layer.cornerRadius = 15.0
@@ -43,26 +41,23 @@ class SchoolCell: UITableViewCell {
         view?.layer.shadowRadius = 3
         view?.layer.masksToBounds = false
     }
-    
-    @IBAction func navigateButtonPressed(_ sender: UIButton) {
+
+    @IBAction func navigateButtonPressed(_: UIButton) {
         let schoolAddress = school.location
-        
-        
-        
-        if let highSchoolCoordinate = getCoodinateForSelectedHighSchool(schoolAddress){
+
+        if let highSchoolCoordinate = getCoodinateForSelectedHighSchool(schoolAddress) {
             let coordinate = CLLocationCoordinate2DMake(highSchoolCoordinate.latitude, highSchoolCoordinate.longitude)
-            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
             mapItem.name = "\(school.schoolName!)"
-            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
         }
     }
-    
-    
-    private func getCoodinateForSelectedHighSchool(_ schoolAddr: String?) -> CLLocationCoordinate2D?{
-        if let schoolAddress = schoolAddr{
+
+    private func getCoodinateForSelectedHighSchool(_ schoolAddr: String?) -> CLLocationCoordinate2D? {
+        if let schoolAddress = schoolAddr {
             let coordinateString = schoolAddress.slice(from: "(", to: ")")
             let coordinates = coordinateString?.components(separatedBy: ",")
-            if let coordinateArray = coordinates{
+            if let coordinateArray = coordinates {
                 let latitude = (coordinateArray[0] as NSString).doubleValue
                 let longitude = (coordinateArray[1] as NSString).doubleValue
                 return CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
@@ -70,5 +65,4 @@ class SchoolCell: UITableViewCell {
         }
         return nil
     }
-    
 }

@@ -9,7 +9,6 @@
 import Foundation
 
 class NYCHighSchool: Codable {
-
     var dbn: String?
     var schoolName: String?
     var overviewParagraph: String?
@@ -18,22 +17,21 @@ class NYCHighSchool: Codable {
     var satWritingAvgScore: String?
     var location: String?
     var neighborhood: String?
-    var borough:  String?
+    var borough: String?
     var phoneNumber: String?
-    var website:String?
-        
+    var website: String?
+
     func getCombinedSATScoreString() -> String {
-        if ((satCriticalReadingAvgScore != nil) && (satWritingAvgScore != nil) && (satMathAvgScore != nil)) {
+        if satCriticalReadingAvgScore != nil, satWritingAvgScore != nil, satMathAvgScore != nil {
             let satReadingScoreInt = Int(satCriticalReadingAvgScore!)
             let satMathScoreInt = Int(satMathAvgScore!)
             let satWritingScoreInt = Int(satWritingAvgScore!)
-            
+
             let combinedScore = satReadingScoreInt! + satMathScoreInt! + satWritingScoreInt!
-            
+
             return "SAT: " + String(combinedScore)
         } else {
             return "N/A"
         }
     }
-    
 }
