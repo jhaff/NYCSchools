@@ -30,7 +30,7 @@ class SchoolCell: UITableViewCell {
         view?.layer.cornerRadius = 15.0
         view?.layer.shadowColor = UIColor.black.cgColor
         view?.layer.shadowOffset = CGSize(width: 0, height: 2)
-        view?.layer.shadowOpacity = 0.8
+        view?.layer.shadowOpacity = 0.7
         view?.layer.shadowRadius = 3
         view?.layer.masksToBounds = false
     }
