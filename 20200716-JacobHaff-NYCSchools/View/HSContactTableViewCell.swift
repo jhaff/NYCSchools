@@ -13,11 +13,6 @@ class HSContactTableViewCell: UITableViewCell {
     @IBOutlet var phoneNumberLabel: UILabel!
     @IBOutlet var websiteLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     func configure(with hsWithSatScore: NYCHighSchool) {
         schoolAddressLabel.text = "Address: " + Utils.getCompleteAddressWithoutCoordinate(hsWithSatScore.location)
 
@@ -26,9 +21,4 @@ class HSContactTableViewCell: UITableViewCell {
         websiteLabel.text = hsWithSatScore.website
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 }

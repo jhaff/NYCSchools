@@ -13,11 +13,6 @@ import UIKit
 class HSMapTableViewCell: UITableViewCell {
     @IBOutlet var mapView: MKMapView!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     func configure(with _: NYCHighSchool) {}
 
     func addHSAnnotaionWithCoordinates(_ hsCoordinates: CLLocationCoordinate2D) {
@@ -28,11 +23,5 @@ class HSMapTableViewCell: UITableViewCell {
         let region = MKCoordinateRegion(center: highSchoolAnnotation.coordinate, span: span)
         let adjustRegion = mapView.regionThatFits(region)
         mapView.setRegion(adjustRegion, animated: true)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }

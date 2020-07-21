@@ -11,11 +11,6 @@ import UIKit
 class HSOverviewTableViewCell: UITableViewCell {
     @IBOutlet var overviewContentLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     func configure(with hsWithSatScore: NYCHighSchool) {
         overviewContentLabel.text = hsWithSatScore.overviewParagraph
     }

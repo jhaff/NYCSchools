@@ -38,15 +38,4 @@ class HSSATScoresTableViewCell: UITableViewCell {
     func calculateSATPercentage(satScore: Int) -> Float {
         return Float(satScore) / 800.00
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 }
