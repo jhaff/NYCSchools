@@ -22,11 +22,9 @@ class ServiceLayer {
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest) { data, response, error in
 
-//            let testTHing = try? JSONSerialization.jsonObject(with: data!, options: [])
-
             guard error == nil else {
                 completion(.failure(error!))
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "Undefined error")
                 return
             }
             guard response != nil else {

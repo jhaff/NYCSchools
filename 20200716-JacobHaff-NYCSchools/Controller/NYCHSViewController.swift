@@ -148,6 +148,8 @@ extension NYCHSViewController: UITableViewDataSource {
         }
 
         cell.schoolCombinedSATLabel.text = school.getCombinedSATScoreString()
+        
+        cell.school = school
 
         return cell
     }

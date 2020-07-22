@@ -57,22 +57,27 @@
                                     <constraint firstItem="UCr-vX-pHW" firstAttribute="centerX" secondItem="mbc-nK-GaZ" secondAttribute="centerX" id="x1F-9M-AwJ"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-rV-oQy">
-                                <rect key="frame" x="0.0" y="90" width="314" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-rV-oQy">
+                                <rect key="frame" x="0.0" y="80" width="314" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beD-mP-SJR" userLabel="Navigate">
-                                        <rect key="frame" x="0.0" y="0.0" width="101" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="50"/>
                                         <state key="normal" image="Navigate Button"/>
+                                        <connections>
+                                            <action selector="navigateButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3QM-S3-5B3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ll0-Fl-Css" userLabel="Call">
-                                        <rect key="frame" x="93" y="0.0" width="127" height="40"/>
+                                        <rect key="frame" x="168" y="0.0" width="146" height="50"/>
                                         <state key="normal" image="Call Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UB1-r9-3R2" userLabel="Details">
-                                        <rect key="frame" x="212" y="0.0" width="102" height="40"/>
-                                        <state key="normal" image="Details Button"/>
+                                        <connections>
+                                            <action selector="callButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GC7-kp-bya"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JQO-E2-F5h"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -109,7 +114,6 @@
     </objects>
     <resources>
         <image name="Call Button" width="88" height="40"/>
-        <image name="Details Button" width="102" height="40"/>
         <image name="Navigate Button" width="101" height="40"/>
     </resources>
 </document>

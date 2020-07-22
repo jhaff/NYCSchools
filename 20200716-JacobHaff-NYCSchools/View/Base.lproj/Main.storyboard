@@ -207,7 +207,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="ebR-m3-BHX"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="rJa-bk-ffa"/>
-                                                                <constraint firstAttribute="width" constant="74" id="ulu-Oi-5Ni"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="ulu-Oi-5Ni"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                             <color key="textColor" red="0.1686073542" green="0.1764897406" blue="0.3607360423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
