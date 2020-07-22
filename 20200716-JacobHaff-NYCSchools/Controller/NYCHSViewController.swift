@@ -10,12 +10,12 @@ import UIKit
 
 class NYCHSViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
-    
+
     let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupSearchController()
 
         tableView.dataSource = self
@@ -35,8 +35,8 @@ class NYCHSViewController: UIViewController {
 
     // MARK: - Variables
 
-    var nycHSList: [NYCHighSchool]?
-    
+    var nycHSList = [NYCHighSchool]()
+
     var filteredNYCHSList = [NYCHighSchool]()
 
     func updateSchools(schools: [NYCHighSchool]) {
@@ -61,7 +61,7 @@ class NYCHSViewController: UIViewController {
       This function is will call the API to get all of the High School with SAT Score, and add to the exist model array according to the common parameter DBN.
 
      - Parameter completion: closure to be executed after a successful API call
-       */
+        */
     private func fetchHighSchoolSATSore(completion: @escaping () -> Void) {
         ServiceLayer.request(router: Router.getDetails) { (result: Result<[NYCHighSchool], Error>) in
             switch result {
@@ -79,12 +79,12 @@ class NYCHSViewController: UIViewController {
      This function is used to add ALL the sat scores to ALL rhw  high schools
 
      - Parameter satScoreObjects: Array of NYCHighSchool objects with SAT data only
-       */
+        */
     func addSatScoreToHighSchools(_ satScoreObject: [NYCHighSchool]) {
         for satScoreObject in satScoreObject {
             if let matchedDBN = satScoreObject.dbn {
                 // This will get the High School with the Common DBN
-                let matchedHighSchool = nycHSList?.first(where: { (nycHighSchool) -> Bool in
+                let matchedHighSchool = nycHSList.first(where: { (nycHighSchool) -> Bool in
                     nycHighSchool.dbn == matchedDBN
                 })
 
@@ -100,8 +100,8 @@ class NYCHSViewController: UIViewController {
             }
         }
     }
-    
-    func setupSearchController(){
+
+    func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Schools"
@@ -109,25 +109,20 @@ class NYCHSViewController: UIViewController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
-    
+
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
     }
-    
+
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
     }
-    
-    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredNYCHSList = (nycHSList?.filter({( school : NYCHighSchool) -> Bool in
-            
-            let searchTermMatched =
-                school.schoolName!.lowercased().contains(searchText.lowercased())
 
-            return searchTermMatched
-        }))!
-        
+    func filterContentForSearchText(_ searchText: String, scope _: String = "All") {
+        filteredNYCHSList = nycHSList.filter { (school: NYCHighSchool) -> Bool in
+            school.schoolName!.lowercased().contains(searchText.lowercased())
+        }
         tableView.reloadData()
     }
 }
@@ -137,10 +132,10 @@ class NYCHSViewController: UIViewController {
 extension NYCHSViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         if isFiltering() {
-            return self.filteredNYCHSList.count
+            return filteredNYCHSList.count
         }
-        
-        return nycHSList?.count ?? 0
+
+        return nycHSList.count
     }
 
     // Make the background color show through
@@ -152,20 +147,10 @@ extension NYCHSViewController: UITableViewDataSource {
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var school = NYCHighSchool()
-        
-        if isFiltering() {
-            school = filteredNYCHSList[indexPath.row]
-        } else {
-            school = self.nycHSList![indexPath.row]
-        }
-        
-        let cell: SchoolCell = tableView.dequeueReusableCell(withIdentifier: Constants.hsCellIdentifier, for: indexPath) as! SchoolCell
 
-        if nycHSList?[indexPath.row] != nil {
-            school = nycHSList![indexPath.row]
-        } else {
-            fatalError()
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.hsCellIdentifier, for: indexPath) as! SchoolCell
+
+        school = nycHSList[indexPath.row]
 
         cell.schoolNameLabel.text = school.schoolName
 
@@ -174,7 +159,7 @@ extension NYCHSViewController: UITableViewDataSource {
         }
 
         cell.schoolCombinedSATLabel.text = school.getCombinedSATScoreString()
-        
+
         cell.school = school
 
         return cell
@@ -187,9 +172,7 @@ extension NYCHSViewController: UITableViewDataSource {
 
 extension NYCHSViewController: UITableViewDelegate {
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let selectedHighSchool = nycHSList?[indexPath.row] {
-            DetailsViewController.nycHighSchool = selectedHighSchool
-        }
+        DetailsViewController.nycHighSchool = nycHSList[indexPath.row]
 
         performSegue(withIdentifier: Constants.HSDetailsSegue, sender: self)
     }
@@ -201,6 +184,7 @@ extension NYCHSViewController: UITableViewDelegate {
 
 extension NYCHSViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
+
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }

@@ -20,5 +20,4 @@ class HSContactTableViewCell: UITableViewCell {
 
         websiteLabel.text = hsWithSatScore.website
     }
-
 }

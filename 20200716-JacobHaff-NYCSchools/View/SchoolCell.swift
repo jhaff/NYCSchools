@@ -58,21 +58,20 @@ class SchoolCell: UITableViewCell {
         }
         return nil
     }
-    
-    @IBAction func callButtonPressed(_ sender: Any) {
+
+    @IBAction func callButtonPressed(_: Any) {
         let schoolPhoneNumber = school.phoneNumber
-        
+
         if let url = URL(string: "tel://\(String(describing: schoolPhoneNumber))"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             let alertView = UIAlertController(title: "Error!", message: "Please run on a real device to call \(schoolPhoneNumber!)", preferredStyle: .alert)
-            
+
             let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            
+
             alertView.addAction(okayAction)
-                        
+
             UIApplication.shared.keyWindow?.rootViewController?.present(alertView, animated: true, completion: nil)
         }
-        
     }
 }
