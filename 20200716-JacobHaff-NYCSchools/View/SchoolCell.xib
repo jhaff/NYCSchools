@@ -108,6 +108,7 @@
                 <outlet property="schoolCityLabel" destination="DZX-fM-bpO" id="L0G-cu-Ptf"/>
                 <outlet property="schoolCombinedSATLabel" destination="UCr-vX-pHW" id="9Zs-xC-uwO"/>
                 <outlet property="schoolNameLabel" destination="Tma-fS-mM8" id="g3z-0z-oUB"/>
+                <outlet property="scoreView" destination="mbc-nK-GaZ" id="gDH-NH-zC8"/>
             </connections>
             <point key="canvasLocation" x="147.82608695652175" y="119.19642857142857"/>
         </tableViewCell>

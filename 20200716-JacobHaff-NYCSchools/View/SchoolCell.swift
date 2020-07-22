@@ -12,6 +12,7 @@ import UIKit
 
 class SchoolCell: UITableViewCell {
     @IBOutlet var cardView: UIView!
+    @IBOutlet var scoreView: UIView!
 
     @IBOutlet var schoolNameLabel: UILabel!
     @IBOutlet var schoolCityLabel: UILabel!
@@ -33,6 +34,9 @@ class SchoolCell: UITableViewCell {
         view?.layer.shadowOpacity = 0.7
         view?.layer.shadowRadius = 3
         view?.layer.masksToBounds = false
+
+        let view2 = scoreView
+        view2?.layer.cornerRadius = 8.0
     }
 
     @IBAction func navigateButtonPressed(_: UIButton) {
