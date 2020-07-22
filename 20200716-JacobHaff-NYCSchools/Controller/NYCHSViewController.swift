@@ -105,7 +105,7 @@ class NYCHSViewController: UIViewController {
 
 extension NYCHSViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return filteredNYCHSList.count ?? 0
+        return filteredNYCHSList.count 
     }
 
     // Make the background color show through
@@ -174,7 +174,7 @@ extension NYCHSViewController: UISearchBarDelegate {
             }
 
             return match
-        } as! [NYCHighSchool])
+            } )
 
         tableView.reloadData()
     }

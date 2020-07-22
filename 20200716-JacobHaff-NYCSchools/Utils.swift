@@ -16,8 +16,8 @@ class Utils {
       - Parameter schoolAddr: unprocessed location string straight from the json
       - Returns: String, address of the high school
      */
-    static func getCompleteAddressWithoutCoordinate(_ schoolAddr: String?) -> String {
-        if let schoolAddress = schoolAddr {
+    static func getCompleteAddressWithoutCoordinate(_ schoolAddress: String?) -> String {
+        if let schoolAddress = schoolAddress {
             let address = schoolAddress.components(separatedBy: "(")
             return address[0]
         }
@@ -31,6 +31,7 @@ class Utils {
      */
     static func getCoodinateForSelectedHighSchool(_ schoolAddr: String?) -> CLLocationCoordinate2D? {
         if let schoolAddress = schoolAddr {
+            // slice is defined in Extensions.swift on String and returns a targeted substring
             let coordinateString = schoolAddress.slice(from: "(", to: ")")
             let coordinates = coordinateString?.components(separatedBy: ",")
             if let coordinateArray = coordinates {

@@ -14,7 +14,7 @@ class HSSATScoresTableViewCell: UITableViewCell {
     @IBOutlet var mathScoreLabel: UILabel!
 
     func configure(with hsWithSatScore: NYCHighSchool) {
-        // For some high schools, there is no information about SAT scores. Display a default message in that case.
+        // For some high schools, there is no information about SAT scores. Display a default message in that case. 
 
         if hsWithSatScore.satCriticalReadingAvgScore != nil {
             readingScoreLabel.text = DetailConstants.averageSATReadingScore + String(hsWithSatScore.satCriticalReadingAvgScore!)

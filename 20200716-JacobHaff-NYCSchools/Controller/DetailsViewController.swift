@@ -21,31 +21,18 @@ class DetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+ 
 }
 
 extension DetailsViewController: UITableViewDataSource {
     // MARK: - Table view data source
-
-//
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        CellAnimator.animate(cell, withDuration: 0.6, animation: CellAnimator.AnimationType(rawValue: 5)!)
-//    }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return 5
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // this switch statement could be considered a bit wonky, and it is rather large. Given more time I might look to use an enum.
         switch indexPath.row {
         case 0: // name
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolNameCellIdentifier) as! HSNameTableViewCell
@@ -90,6 +77,8 @@ extension DetailsViewController: UITableViewDelegate {
     // MARK: - UITable View Delegate
 
     func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // this switch statement could be considered a bit wonky, and it is rather large. Given more time I might look to use an enum. I am also using "Magic numbers" for most of the row heights, except for the overview. For example I should be trying to use automaticDimension on the scores section as well.
+
         switch indexPath.row {
         case 0: // name
             return 40.00

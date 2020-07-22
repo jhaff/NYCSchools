@@ -13,8 +13,6 @@ import UIKit
 class HSMapTableViewCell: UITableViewCell {
     @IBOutlet var mapView: MKMapView!
 
-    func configure(with _: NYCHighSchool) {}
-
     func addHSAnnotaionWithCoordinates(_ hsCoordinates: CLLocationCoordinate2D) {
         let highSchoolAnnotation = MKPointAnnotation()
         highSchoolAnnotation.coordinate = hsCoordinates

@@ -71,6 +71,7 @@ class SchoolCell: UITableViewCell {
 
             alertView.addAction(okayAction)
 
+            // given more time I would google more about this warning and find a better solution. This seems to work well though.
             UIApplication.shared.keyWindow?.rootViewController?.present(alertView, animated: true, completion: nil)
         }
     }

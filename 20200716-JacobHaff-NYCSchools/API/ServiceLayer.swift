@@ -9,6 +9,7 @@
 import Foundation
 
 class ServiceLayer {
+    // This is a generic service layer, allowing us to use this very request method for all of our API requests
     class func request<T: Codable>(router: Router, completion: @escaping (Result<[T], Error>) -> Void) {
         var components = URLComponents()
         components.scheme = router.scheme
