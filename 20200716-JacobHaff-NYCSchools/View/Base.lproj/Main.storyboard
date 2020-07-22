@@ -15,22 +15,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hqd-16-oGJ">
+                                <rect key="frame" x="20" y="88" width="374" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OWK-pi-u2M">
-                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <rect key="frame" x="20" y="142" width="374" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="OWK-pi-u2M" firstAttribute="leading" secondItem="KvG-hp-Sxp" secondAttribute="leading" constant="20" id="Nj7-OQ-LOS"/>
+                            <constraint firstItem="hqd-16-oGJ" firstAttribute="top" secondItem="KvG-hp-Sxp" secondAttribute="top" id="PbU-2y-ZZ9"/>
                             <constraint firstItem="KvG-hp-Sxp" firstAttribute="trailing" secondItem="OWK-pi-u2M" secondAttribute="trailing" constant="20" id="QSz-Ki-o5U"/>
-                            <constraint firstItem="OWK-pi-u2M" firstAttribute="top" secondItem="KvG-hp-Sxp" secondAttribute="top" id="oBV-9H-yNG"/>
+                            <constraint firstAttribute="trailing" secondItem="hqd-16-oGJ" secondAttribute="trailing" constant="20" id="cT4-KM-CtM"/>
+                            <constraint firstItem="OWK-pi-u2M" firstAttribute="top" secondItem="KvG-hp-Sxp" secondAttribute="top" constant="54" id="d5v-EU-WP4"/>
                             <constraint firstItem="KvG-hp-Sxp" firstAttribute="bottom" secondItem="OWK-pi-u2M" secondAttribute="bottom" id="yMP-nz-o0s"/>
+                            <constraint firstItem="hqd-16-oGJ" firstAttribute="leading" secondItem="KvG-hp-Sxp" secondAttribute="leading" constant="20" id="yZU-ok-bH4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KvG-hp-Sxp"/>
                     </view>
                     <navigationItem key="navigationItem" title="NYC Schools" id="1aj-S2-okf"/>
                     <connections>
+                        <outlet property="searchBar" destination="hqd-16-oGJ" id="kbX-cr-rkx"/>
                         <outlet property="tableView" destination="OWK-pi-u2M" id="faP-ot-X72"/>
                         <segue destination="e3b-RT-iLb" kind="show" identifier="HSDetailsSegue" id="Sts-KO-4cn"/>
                     </connections>

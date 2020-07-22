@@ -22,16 +22,16 @@ class NYCHighSchool: Codable {
     var website: String?
 
     func getCombinedSATScoreString() -> String {
+        var combinedScore: Int
+
         if satCriticalReadingAvgScore != nil, satWritingAvgScore != nil, satMathAvgScore != nil {
-            let satReadingScoreInt = Int(satCriticalReadingAvgScore!)
-            let satMathScoreInt = Int(satMathAvgScore!)
-            let satWritingScoreInt = Int(satWritingAvgScore!)
-
-            let combinedScore = satReadingScoreInt! + satMathScoreInt! + satWritingScoreInt!
-
-            return "SAT: " + String(combinedScore)
-        } else {
-            return "N/A"
+            if let satReadingScoreInt = Int(satCriticalReadingAvgScore!),
+                let satMathScoreInt = Int(satMathAvgScore!),
+                let satWritingScoreInt = Int(satWritingAvgScore!) {
+                combinedScore = satReadingScoreInt + satMathScoreInt + satWritingScoreInt
+                return "SAT: " + String(combinedScore)
+            }
         }
+        return "N/A"
     }
 }
