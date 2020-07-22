@@ -30,8 +30,8 @@
             filePath = "20200716-JacobHaff-NYCSchools/Controller/NYCHSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "tableView(_:heightForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "20200716-JacobHaff-NYCSchools/Controller/NYCHSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175">
+            startingLineNumber = "208"
+            endingLineNumber = "208">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -202,8 +202,8 @@
             filePath = "20200716-JacobHaff-NYCSchools/Controller/NYCHSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -250,8 +250,8 @@
             filePath = "20200716-JacobHaff-NYCSchools/Controller/NYCHSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,8 +314,8 @@
             filePath = "20200716-JacobHaff-NYCSchools/Controller/NYCHSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,8 +330,8 @@
             filePath = "20200716-JacobHaff-NYCSchools/Controller/NYCHSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "addSatScoreToHighSchools(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,8 +346,8 @@
             filePath = "20200716-JacobHaff-NYCSchools/Controller/NYCHSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "addSatScoreToHighSchools(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,8 +362,8 @@
             filePath = "20200716-JacobHaff-NYCSchools/Controller/NYCHSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -378,8 +378,8 @@
             filePath = "20200716-JacobHaff-NYCSchools/Controller/NYCHSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
