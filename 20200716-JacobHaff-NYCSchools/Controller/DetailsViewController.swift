@@ -21,7 +21,6 @@ class DetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
- 
 }
 
 extension DetailsViewController: UITableViewDataSource {
