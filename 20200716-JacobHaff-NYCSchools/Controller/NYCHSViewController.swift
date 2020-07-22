@@ -142,7 +142,7 @@ extension NYCHSViewController: UITableViewDataSource {
 
 extension NYCHSViewController: UITableViewDelegate {
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DetailsViewController.nycHighSchool = nycHSList[indexPath.row]
+        DetailsViewController.nycHighSchool = filteredNYCHSList[indexPath.row]
 
         performSegue(withIdentifier: Constants.HSDetailsSegue, sender: self)
     }
