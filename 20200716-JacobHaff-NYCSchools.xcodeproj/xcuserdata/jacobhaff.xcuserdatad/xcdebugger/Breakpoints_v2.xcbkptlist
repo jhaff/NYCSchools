@@ -484,7 +484,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8FE5F9EE-7875-46E8-9EED-4BA7D42DD182"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "20200716-JacobHaff-NYCSchools/View/HSContactTableViewCell.swift"
